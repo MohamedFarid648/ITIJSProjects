@@ -1,0 +1,33 @@
+what is react JS ?
+difference between Angular 4 vs REACT JS ?
+library vs framework ?
+
+why to use react as a component based framework ?
+
+how it renders component with Virtal dom ? 
+
+MVC or V only ?
+
+
+
+what is the component structure ?
+
+State object vs Props object ?
+
+communication between components ?
+
+JSX ? 
+
+calling APi " AXIOS " ?
+
+=====================================================
+
+React Native ? 
+
+how it works ? 
+threads and bridging ? 
+
+how we can run and build the environment ?
+
+making an application ?
+

@@ -1,0 +1,13 @@
+.ImgDiv{
+    color: white;
+    background-image: url('images/intro_flower.png');
+    // text-align: center;
+}
+.Categories{
+    
+    background-color: #666e76;
+}
+#Cat_Arch{
+    
+     background-color:#999;
+}

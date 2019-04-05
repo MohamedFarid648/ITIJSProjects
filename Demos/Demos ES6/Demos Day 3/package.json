@@ -1,0 +1,21 @@
+{
+	"name": "mymodsd38",
+	"version": "1.0.0",
+	"description": "custom module for SD38",
+	"main": "myMod.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"cart",
+		"custommodule",
+		"sd38"
+	],
+	"author": "niveenasr",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.18.2",
+		"ejs": "^2.5.7",
+		"express": "^4.16.2"
+	}
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Untitled Document</title>
+        <style>
+            div {
+                background-color: pink;
+                border: 5px red solid;
+                width: 150px;
+                height: 150px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="d1">
+
+            <input type="button" value="click" id="btn" />
+            <span id="s1"></span>
+
+        </div>
+        <script>
+            function btnclick(e) {
+                alert("button");
+                e.stopPropagation();//to stop call parent after it
+
+            }
+
+
+            document.addEventListener("click", docClick, false);
+            //onclick = docClick;
+            document.getElementById("d1").addEventListener("click", divClick, false);
+            //.onclick = divClick;
+
+
+            document.getElementById("btn").addEventListener("click", btnclick, false);
+
+            function docClick() {
+                alert("document")
+
+
+            }
+
+
+            function divClick(e) {
+                //document.getElementById("d1").innerHTML+="d "
+                console.log("divClick:");
+                console.log("e.clientX:" + e.clientX);
+
+                console.log("e.type:" + e.type);
+                console.log("e.target:" + e.target.style.color);
+                e.target.style.color='blue';
+                document.getElementById("s1").innerHTML = "abc"
+                alert("div")
+                e.cancelBubble = true;
+                e.target.removeEventListener("click", divClick);
+                //just call event click once and remove it
+
+            }
+
+        </script>
+
+    </body>
+
+</html>

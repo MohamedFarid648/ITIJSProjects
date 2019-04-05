@@ -1,0 +1,77 @@
+<div class="row">
+
+<div class="col-3"></div>
+<div class="col-6" id="FormContent">
+
+<form>
+  <div class="form-group">
+    <!-- Dont forget  name="name" 
+    if else you will found this error :
+    https://stackoverflow.com/questions/47069944/if-ngmodel-is-used-within-a-form-tag-set-name-or-set-standalone-error?rq=1
+    -->
+
+    <label class="" for="Name" >Name</label>
+    <input type="text" name="name" class="form-control" placeholder="Name"
+     [(ngModel)]="ComObject.Name"/>
+   </div>
+   <div class="form-group">
+    <label class="" for="Email">Email</label>
+    <input type="email"  name="email"   [(ngModel)]="ComObject.Email" class="form-control" placeholder="Email"/>
+   </div>
+   <div class="form-group">
+    <label class="" for="Phone">Phone</label>
+    <input type="number"  [(ngModel)]="ComObject.Phone"  name="phone" class="form-control" placeholder="Phone"/>
+   </div>
+   <div class="form-group">
+    <label class="" for="Complain">Complain</label>
+    <textarea cols="5"  name="ComplainTextArea" rows="4" class="form-control" 
+    [(ngModel)]="ComObject.Complain" placeholder="Complain"></textarea>
+   </div>
+    <input type="button" value="Send" class="btn btn-primary" data-toggle="modal"  data-target="#MyComplainForm">
+</form>
+
+
+
+
+               <div class="modal" id="MyComplainForm" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <!-- Header-->
+                            <div class="modal-header">
+                                <h5 class="modal-title">Complain Review</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <!--Content-->
+                            <div class="modal-body">
+                              <h3>Your Name is : <span [innerHtml]="ComObject.Name"></span></h3>
+                              <h3>Your Email is : <span [innerHtml]="ComObject.Email"></span></h3>
+                              <h3>Your Phone is : <span [innerHtml]="ComObject.Phone"></span></h3>
+                              <h3>Your Complain is : <span [innerHtml]="ComObject.Complain"></span></h3>
+                              
+                            </div>
+                            <div class="modal-footer">
+                               <button type="button" id="btnMakeChanges"
+                                onclick="$('#FormContent').html('<h1>Thanks Man</h1>');"
+                               
+                                class="btn btn-primary">Make Changes</button>
+                                <button type="button"  class="btn btn-secondary close" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div> <!--modal-content-->
+                    </div><!--modal-->
+                </div><!--modal-->
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+function btnMakeChanges(){
+
+  $("#FormContent").html("<h1>Thanks Man</h1>");
+
+}
+</script>

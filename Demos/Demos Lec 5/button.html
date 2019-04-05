@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Untitled Document</title>
+        <script>
+            function init() {
+                document.getElementById("div1").innerHTML = "<b> Er7amna ya Ahmed</b>";
+
+                document.getElementById("div1").innerHTML = "<b> Omar</b>";
+            }
+        </script>
+
+
+    </head>
+
+    <body onload="init()">
+        <div id="div1"></div>
+        <input type="button" value=" 1 " onclick="addData(this)" />
+        <input type="button" value=" 2 " onclick="addData(this)" />
+        <input type="button" value=" 3 " onclick="addData(this)" />
+        <input type="button" value=" 4 " onclick="addData(this)" />
+        <input type="button" value=" 5 " onclick="addData(this)" />
+        <input type="button" value=" 6 " onclick="addData(this)" />
+        <input type="button" value=" 7 " onclick="addData(this)" />
+        <input type="text" value="" id="txt">
+        <input type="button" value="C" id="btn1" />
+        <input type="button" value="<<" onclick="eraseTxt()" />
+
+
+        <script>
+            document.getElementById("btn1").onclick =clearTxt;//will call it just when click the button
+                    // clearTxt();//will call it in load windows
+
+            function addData(elem) {
+                document.getElementById("txt").value += elem.value.trim();
+
+            }
+
+
+            function clearTxt() {
+                alert("clear text");
+                console.log("exec");
+                document.getElementById("txt").value = ""
+
+            }
+
+            function eraseTxt() {
+                var val = document.getElementById("txt").value;
+                console.log("val.substring(0, val.length - 1):"+val.substring(0, val.length - 1));
+
+
+            }
+
+        </script>
+
+    </body>
+
+</html>

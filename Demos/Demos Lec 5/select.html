@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Untitled Document</title>
+
+</head>
+
+<body>
+	<select id="menu" multiple size=3>
+		<option value="v1">item#1</option>
+		<option value="v2">item#2</option>
+		<option value="v3">item#3</option>
+		<option value="v4">item#4</option>
+		<option value="v5">item#5</option>
+		<option value="v6">item#6</option>
+
+	</select>
+	<input type="button" value="display" onclick="displaySelect()">
+	<div id="d1"></div>
+
+	<script>
+		function displaySelect() {
+			var sel = document.getElementById("menu");
+			//console.log(sel.options.length);
+			document.getElementById("d1").innerHTML = "";
+			//document.getElementById("d1").innerHTML = sel.options[sel.selectedIndex].text
+
+
+			for (i = 0; i < sel.options.length; i++) {
+				if (sel.options[i].selected)
+					document.getElementById("d1").innerHTML += sel.options[i].value + "<br/>";
+
+			}
+
+
+
+		}
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Welcome</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <div>
+
+            <img src="" >
+            <p>
+                <b>Welcome <span id="userName"></span> 
+                    you have visited this site <span id="counterHTML"></span> </b>
+            </p>
+            <br/>
+            <!--  <button onclick="displayAllCookies()">Display All Cookies</button>
+              <button onclick="deleteAllCookis()">Delete All Cookies</button>
+            -->
+
+        </div>
+        <script type="text/javascript">
+            //  window.onload = count++;
+            
+            var UserObject=JSON.parse(localStorage.getItem("UserObject"));//Parse from String "{"name":"Ahmed"}" to Object {name:"Ahmed"}
+            
+            
+            if (UserObject== null)
+            {
+                
+                document.body.innerHTML="";
+                document.write("<h3 style='text-align:center;margine-top:100px;'>You have no access to this  page :) </h3>")
+                
+                
+            }
+            var counter = sessionStorage.getItem("counter");
+           // window.onload = function () {
+
+               if (!counter){
+                   counter=1;
+                    sessionStorage.setItem("counter", counter);
+                }
+                else {
+                    counter = parseInt(sessionStorage.getItem("counter"));
+                    counter++;
+                    sessionStorage.setItem("counter",counter);
+                }
+            //}
+
+            // document.write(document.cookie);
+            var userName = document.getElementById("userName");
+            userName.innerHTML =UserObject.userName;
+            userName.style.color = UserObject.userFavoriteColor;
+            /* var cookieCounter = parseInt(displayCookie(" counter"));
+             cookieCounter++;
+             createCookie("counter", cookieCounter);
+             */
+            var counterHTML = document.getElementById("counterHTML");
+            counterHTML.innerHTML = counter;//count;
+            counterHTML.style.color = UserObject.userFavoriteColor;
+
+            var genderImg = document.images[0];
+            if (UserObject.userGender == "Male")
+                genderImg.src = "../images/male.jpg";
+            else if(UserObject.userGender=="Female")
+                genderImg.src = "../images/female.jpg";
+
+        </script>
+    </body>
+</html>

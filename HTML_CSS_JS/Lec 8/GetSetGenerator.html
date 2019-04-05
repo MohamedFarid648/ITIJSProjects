@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Get Set Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div></div>
+
+
+        <script>
+            //"".split.apply(myObj,[":"]);
+            function GetSetGenerator(myObject) {
+
+                //  var myName=this.name;
+                this.getName = function () {
+                    return myObject.name;
+                }
+                this.getAge = function () {
+                    return myObject.age;
+                }
+                this.getSalary = function () {
+                    return myObject.salary;
+                }
+            }
+
+            var myObj = new GetSetGenerator({name: "ABC", age: 40, salary: 4000});
+
+            document.write("<br/><br/>GetName:" + myObj.getName());
+            document.write("<br/>Name:" + myObj.name);//undefined
+
+            document.write("<br/><br/>GetAge:" + myObj.getAge());
+            document.write("<br/>Name:" + myObj.age);//undefined
+
+            document.write("<br/><br/>GetSalary:" + myObj.getSalary());
+            document.write("<br/>Salary:" + myObj.salary);//undefined
+        </script>
+    </body>
+</html>

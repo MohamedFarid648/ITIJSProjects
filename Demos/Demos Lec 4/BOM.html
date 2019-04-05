@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Untitled Document</title>
+	<script>
+		var win1;
+
+		function openWin() {
+
+			win1 = window.open("1.html", "", "width=150,height=200");
+
+		}
+
+		function winCheck() {
+
+			if (win1.closed)
+				openWin();
+			win1.focus();
+		}
+
+		function closeWin() {
+			win1.close();
+
+		}
+
+		function moveWin() {
+			win1.moveTo(100, 100);
+			win1.focus();
+
+		}
+	</script>
+
+
+</head>
+
+<body>
+	<input type="button" value="open Window" onclick="openWin()">
+	<input type="button" value="Check Window" onclick="winCheck()">
+	<input type="button" value="close Window" onclick="closeWin()">
+	<input type="button" value="move Window" onclick="moveWin()">
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Amr Demo</title>
+
+</head>
+
+<body>
+	<p>simple sentence</p>
+	<div id="d1">content of div</div>
+	<br/>
+	<br/>
+	<br/>
+	<div id="d2" align="center"></div>
+	<script>
+		document.getElementById("d2").innerHTML = "<b>" + document.title + "</b>";
+	
+		document.getElementById("d2").innerHTML+=" new Data";
+		var txt=document.getElementById("d2").innerHTML
+		console.log(txt);
+		//document.getElementById("d2").innerText
+
+		document.getElementById("d1").innerHTML = "";
+
+	</script>
+
+
+</body>
+
+</html>

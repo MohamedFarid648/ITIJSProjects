@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Moving Marbles</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body onload="">
+        <br/><br/><br/><br/><br/><br/>
+        <div style="text-align: center;">
+
+
+            <img src="marbels/marble1.jpg" onmouseover="onMouseOverMethod()" onmouseout="onMouseOutMethod()">
+            <img src="marbels/marble1.jpg" onmouseover="onMouseOverMethod()" onmouseout="onMouseOutMethod()" >
+            <img src="marbels/marble1.jpg" onmouseover="onMouseOverMethod()" onmouseout="onMouseOutMethod()">
+            <img src="marbels/marble1.jpg" onmouseover="onMouseOverMethod()" onmouseout="onMouseOutMethod()">
+            <img src="marbels/marble1.jpg" onmouseover="onMouseOverMethod()" onmouseout="onMouseOutMethod()">
+        </div>
+        <script>
+            // document.images[1].src = "marbels/marble" + 2 + ".jpg";
+            document.onLoad = changeImgSrc;
+
+            var timer, ImgNum = 0, count = 2;
+            function changeImgSrc() {
+                if (ImgNum != 0)
+                    document.images[ImgNum - 1].src = "marbels/marble" + 1 + ".jpg";
+                else if (ImgNum == 0)
+                    document.images[4].src = "marbels/marble" + 1 + ".jpg";
+
+                document.images[ImgNum++].src = "marbels/marble" + 3 + ".jpg";
+
+
+                console.log("Iteration:");
+                console.log("count=" + count);
+                console.log("ImgNum=" + ImgNum);
+
+                if (ImgNum > 4)
+                    ImgNum = 0;
+                //if (count > 3)
+                //     count = 1
+                //  if (ImgNum > 0) {
+
+                //    ImgNum--;
+                //  count--;
+
+                timer = setTimeout(changeImgSrc, 1000);
+
+            }
+
+            function onMouseOverMethod() {
+
+                clearTimeout(timer);
+                // count=1;ImgNum=0;
+            }
+            function  onMouseOutMethod() {
+                changeImgSrc();
+
+            }
+
+            changeImgSrc();
+        </script>
+    </body>
+</html>

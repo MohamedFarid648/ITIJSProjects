@@ -1,0 +1,19 @@
+Material Design :
+
+Course : https://www.lynda.com/Angular-tutorials/Install-configure-Material-Design/622087/659521-4.html
+
+installation: https://material.angular.io/guide/getting-started
+
+1. npm install --save @angular/material @angular/cdk
+2.npm install --save hammerjs
+3.import{MatButtonModule,...}
+:https://stackoverflow.com/questions/46455948/unable-to-compile-material-in-angular-4-gives-material-has-no-exported-memb
+
+4.create Module : ng g m mymaterial : https://www.youtube.com/watch?v=JwXOqMu6w08
+
+5.make style.scss:
+@import '~@angular/material/theming';
+/*@include mat-care();*/
+
+
+change it in angular-cli.json

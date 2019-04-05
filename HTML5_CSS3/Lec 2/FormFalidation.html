@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Form Falidation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+
+            form span,input{
+
+                display: block;
+                
+            }
+            input{
+                
+                
+               // border:1px solid blue;
+            }
+
+            input:invalid{
+
+                border:1px solid red;
+            }
+           /*  input:invalid{
+
+                border:1px solid red;
+            }*/
+            input:valid +span{/*if input is valid get any span after it and make it display:none*/
+
+
+                display: none;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div>
+
+            <h1>Change Email Address </h1>
+
+            <form method="get">
+                <input type="text" name="UName" required="" 
+                       placeholder="Username" pattern="^[a-zA-z]{3,10}$"/>
+                <span>The Required Name may only be a series of alphabetical characters 
+                <br>Reg Expression:/^[a-zA-z]{3,10}$/gi</span>
+                <br>
+                <input type="email" name="UEmail"  required=""
+                       placeholder="Email"
+                       
+                       pattern="^[a-zA-z0-9]+\@[a-zA-z0-9]+\.[a-zA-z0-9]*$"
+                       /><!--^[a-zA-z0-9]+\@[a-zA-z0-9]+\.[a-zA-z0-9]*$" -->
+                <span>The Required Email Address may not include any special characters 
+                <br>Reg Expression:/^[a-zA-z0-9]+\@[a-zA-z0-9]+\.[a-zA-z0-9]*$/gi</span>
+                <br>
+                <input type="submit" value="Change"/>
+            </form>
+
+
+        </div>
+    </body>
+</html>

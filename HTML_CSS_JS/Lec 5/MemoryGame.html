@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Memory Game</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+
+        <div style="text-align: center">
+
+            <img src="" name="img1" onclick="onClickImage(this, 1, 0)"/>
+            <img src="" name="img2" onclick="onClickImage(this, 2, 1)"/>
+            <img src="" name="img3" onclick="onClickImage(this, 3, 2)"/>
+            <img src="" name="img4" onclick="onClickImage(this, 4, 3)"/>
+
+            <br/>
+            <img src="" name="img5" onclick="onClickImage(this, 5, 4)"/>
+            <img src="" name="img6" onclick="onClickImage(this, 6, 5)"/>
+            <img src="" name="img1" onclick="onClickImage(this, 1, 6)"/>
+            <img src="" name="img2" onclick="onClickImage(this, 2, 7)"/>
+
+            <br/>
+            <img src="" name="img3" onclick="onClickImage(this, 3, 8)"/>
+            <img src="" name="img4" onclick="onClickImage(this, 4, 9)"/>
+            <img src="" name="img5" onclick="onClickImage(this, 5, 10)"/>
+            <img src="" name="img6" onclick="onClickImage(this, 6, 11)"/>
+
+
+        </div>
+
+        <script>
+
+
+            var MyImages = [], i, numOfOnClickCalling = 0;
+            for (i = 0; i < 12; i++)
+            {
+                MyImages[i] = "memoryGame/Moon.gif";
+            }
+            var checkEqual = false;
+            function drawMyDocument() {
+                //countSelectedImages = 0;
+                for (i = 0; i < 12; i++)
+                {
+                    document.images[i].src = MyImages[i];
+                    console.log("MyImages[" + i + "]" + MyImages[i])
+
+                }
+                console.log("draw document")
+                console.log("drawMyDocument:checkEqual=" + checkEqual);
+
+            }
+            drawMyDocument();
+
+            var selectedImages = [];
+            var selectedImagesIndex = [];
+            countSelectedImages = 0;
+
+
+            function onClickImage(thisObject, ImgNum, ImgIndex) {
+                numOfOnClickCalling++;
+                thisObject.src = "memoryGame/" + ImgNum + ".gif";
+
+                //1.gif(index:0)
+                //4.gif(index:3)
+                //1.gif(index:6)
+                console.log("thisObject.src:" + thisObject.src);
+
+                //when user click on the first and second image
+                if (countSelectedImages < 2) {
+                    selectedImages[countSelectedImages] = thisObject.src;
+                    //selectedImages[0]="1.gif"
+                    //selectedImages[1]="4.gif"
+                    selectedImagesIndex[countSelectedImages] = ImgIndex;
+                    //selectedImagesIndex[0]="0"
+                    //selectedImagesIndex[1]="3"
+                    console.log("countSelectedImages=" + countSelectedImages);
+
+                    if (countSelectedImages == 1) {
+                        console.log("countSelectedImages=" + countSelectedImages);
+
+                        if (selectedImages[0] == selectedImages[1]) {
+
+
+                            MyImages[selectedImagesIndex[0]] = thisObject.src;
+                            MyImages[ImgIndex] = thisObject.src;
+                            selectedImages = [];
+                            selectedImagesIndex = [];
+                            // countSelectedImages++;
+                            drawMyDocument();
+                            countSelectedImages = -1;
+                            //because it will increasing after thif if if (countSelectedImages < 2) {},
+                            //so it will be countSelectedImages=0 and we will start again 
+
+                            console.log("selectedImages[0] == selectedImages[1]");
+                            console.log("countSelectedImages=" + countSelectedImages);
+
+
+                        }
+
+                    }
+                    console.log("selectedImages[" + countSelectedImages + "]:" + selectedImages[countSelectedImages]);
+                    console.log("selectedImagesIndex[" + countSelectedImages + "]:" + selectedImagesIndex[countSelectedImages]);
+                    console.log("countSelectedImages:" + countSelectedImages);
+                    console.log("if(countSelectedImages < 2):" + checkEqual);
+
+                }
+
+                countSelectedImages++;
+
+                //when user click on the third image
+                if (countSelectedImages > 2) {
+
+                    for (i = 0; i < selectedImages.length; i++) {
+                        console.log("if(countSelectedImages > 2):" + checkEqual + " ,,i=" + i);
+
+                        /*if the third image equal to any one from last two images
+                         * (we saved them in selectedImages and we saved their index in selectedImagesIndex)
+                         * set this image in MyImages[Index of this image]
+                         * set the image that equal it from selectedImages 
+                         * in MyImages[value of selectedImagesIndex[i] that have the index of the image that equal the third image] 
+                         */
+                        if (thisObject.src === selectedImages[i]) {
+                            /*selectedImages[0]=1.gif
+                             if(1.gif==1.gif){
+                             MyImages[selectedImagesIndex[0]] = 1.gif;
+                             MyImages[0] = 1.gif;
+                             MyImages[ImgIndex]=1.gif
+                             MyImages[6] =1.gif                  
+                             }
+                             */
+                            console.log("if(countSelectedImages > 2) if(thisObject.src === selectedImages[i]):" + checkEqual + " ,,i=" + i);
+
+                            MyImages[selectedImagesIndex[i]] = thisObject.src;
+                            MyImages[ImgIndex] = thisObject.src;
+
+                            console.log("MyImages[" + selectedImagesIndex[i] + "]:" + MyImages[selectedImagesIndex[i]]);
+                            console.log("MyImages[" + ImgIndex + "]:" + MyImages[ImgIndex[i]]);
+                            checkEqual = true;
+
+
+
+                        }//end of if
+
+                    }//end of for loop
+
+                    drawMyDocument();
+
+                    //draw the document,and set the image that user choose it on the screen(because we didn't save it in MyImages[])
+                    thisObject.src = "memoryGame/" + ImgNum + ".gif";
+                    countSelectedImages = 0;
+
+                    //when user click on the third image and it isn't equal to any image from the last two images 
+                    //set it on selectedImages(like  if (countSelectedImages < 2) )  
+                    if (checkEqual != true) {
+                        console.log("if (checkEqual != true) ::checkEqual=" + checkEqual);
+                        selectedImages[countSelectedImages] = thisObject.src;
+                        selectedImagesIndex[countSelectedImages] = ImgIndex;
+                        console.log("selectedImages[" + countSelectedImages + "]:" + selectedImages[countSelectedImages]);
+                        console.log("selectedImagesIndex[" + countSelectedImages + "]:" + selectedImagesIndex[countSelectedImages]);
+                        console.log("countSelectedImages:" + countSelectedImages);
+                        countSelectedImages++;
+                        console.log("I don't found any images like me ^_^")
+
+
+                    } else {
+                        console.log("I  found an image like me ^_^")
+
+                    }
+
+                    //make it false(default value)
+                    checkEqual = false;
+                    console.log("checkEqual before closing if (countSelectedImages > 2):" + checkEqual);
+
+                }
+                ckeckMyImages();
+            }
+
+            function ckeckMyImages() {
+                var checkIfThereIsATextOrNot = true;
+                var j = 0;
+                do {
+                    if (MyImages[j]==="memoryGame/Moon.gif")
+                        checkIfThereIsATextOrNot = false;
+                    console.log("checkIfThereIsATextOrNot:" + checkIfThereIsATextOrNot);
+                    console.log("MyImages[" + j + "]:" + MyImages[j]);
+
+                    j++;
+                }while (checkIfThereIsATextOrNot && j < 12);
+                console.log("numOfOnClickCalling:" + numOfOnClickCalling);
+                if (checkIfThereIsATextOrNot)
+                    alert("Congratulations!! :) You have clicked :" + numOfOnClickCalling + " times ^_^");
+            }
+        </script>
+
+    </body>
+</html>

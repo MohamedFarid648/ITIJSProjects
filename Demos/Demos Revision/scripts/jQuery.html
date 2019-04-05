@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Untitled Document</title>
+	<script src="jQuery-D.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			console.log($("#h1id").html());
+			$("#h1id").html("jQueryLib Lecture").css("color", "red").css("text-align","center");
+			console.log($("#h1id").html());
+
+		});
+
+
+		/*
+		onload = function() {
+
+			document.getElementById("h1id").innerHTML = "jQueryLib Lecture"
+		}*/
+	</script>
+</head>
+
+<body>
+	<h1 id="h1id">jQuery</h1>
+	<h2>Demo1</h2>
+
+</body>
+</html>

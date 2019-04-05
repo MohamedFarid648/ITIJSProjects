@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Untitled Document</title>
+
+</head>
+
+<body>
+	<input type="text" id="txt1">
+	<input type="button" value="save" id="btn1">
+	<input type="button" value="get" id="btn2">
+
+	<script>
+		document.getElementById("btn1").onclick = function() {
+			var info = document.getElementById("txt1").value;
+
+			localStorage.setItem("user_nm", info);
+			localStorage["user_age"] = [1, 2, 3, 4, 510];
+			
+			sessionStorage["counter"]=10
+
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Try Dom methods</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    </head>
+
+    <body>
+        <div id="header" style="text-align: right">
+
+            <img src ="dom.jpg" alt="hello..it rains over here:)" name="img1"/>
+        </div>
+    <center>
+
+        <div id="navigation">
+            <ul id="nav">
+                <li><strong>Memo</strong></li>
+                <li><a href="Articles.html">Articles</a></li>
+                <li><a href="Photos.html">Photos</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Clients.html">Clients</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+    </center>
+    <script>
+
+        //document.getElementsByTagName("ul")[0].firstChild.nextSibling==><li><strong>Memo</strong></li>
+
+        document.getElementsByTagName("ul")[0].style.listStyleType = "circle";
+        var myImg = document.images[0].cloneNode(false);//true will take the element with it's attributes
+        document.body.appendChild(myImg);
+        //document.images[0].style.float="right";
+
+
+    </script>
+</body>
+
+
+
+</html>

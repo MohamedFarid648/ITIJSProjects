@@ -1,0 +1,10 @@
+https://facebook.github.io/react-native/docs/getting-started.html
+
+or
+
+https://github.com/facebook/create-react-app.git
+
+with
+
+https://www.thenetninja.co.uk/courses/react-tutorials
+git clone:https://github.com/iamshaunjp/react-playlist

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>SortArray</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+
+
+
+            //https://www.w3schools.com/jsref/jsref_sort.asp
+            function sortNumberAscending(a, b) {
+                return a - b;
+            }
+            function sortNumberDescending(a, b) {
+                return b - a;
+            }
+
+
+            //trySortingArray();
+            function trySortingArray2() {
+
+                //var myArr=[];
+                var myArr = new Array();
+                var num, i = 0;
+                do {
+                    num = parseInt(prompt("Enter a number please ^_^"));
+                    if (num != 0) {
+
+                        myArr[i] = num;
+                        i++;
+                    }
+                } while (num != 0)
+
+                var myStr = "You have entered the values of :";
+                document.write(myStr.fontcolor("red") + myArr.join(","));
+
+                myStr = "<br/><br/>You have entered the values (after sorting ascending) :";
+                myArr.sort(function (a, b) {
+                    return a - b;
+                });
+                document.write(myStr.fontcolor("red") + myArr.join(","));
+
+
+                myStr = "<br/><br/>You have entered the values (after sorting descending) :";
+                myArr.sort(function (a, b) {
+                    return b - a;
+                });
+                document.write(myStr.fontcolor("red") + myArr.join(","));
+
+
+            }
+            trySortingArray2();
+            /*
+             // ES5
+             numArray = numArray.sort(function (a, b) {  return a - b;  });
+             
+             // ES2015
+             numArray = numArray.sort((a, b) => a - b); 
+             
+             */
+
+            function trySortingArray() {
+
+
+                var numArray = [140000, 104, 99];
+                numArray.sort();
+                document.write("<br/><br/>Sorting Array Alphabetically:" + numArray.join(","));
+                numArray.sort(sortNumberAscending);
+                document.write("<br/><br/>Sorting Array Numerically Ascending(Right way):" + numArray.join(","));
+                numArray.sort(sortNumberDescending);
+                document.write("<br/><br/>Sorting Array Numerically Descending(Right way):" + numArray.join(","));
+            }
+            /*
+             * 	Description
+             compareFunction:	Optional. 
+             A function that defines an alternative sort order.
+             The function should return a negative, zero, or positive value, depending on the arguments,
+             like:
+             function(a, b){return a-b}
+             When the sort() method compares two values, 
+             it sends the values to the compare function,
+             and sorts the values according to the returned (negative, zero, positive) value.
+             
+             
+             Example:
+             
+             When comparing 40 and 100, the sort() method calls the compare function(40,100).
+             
+             The function calculates 40-100, and returns -60 (a negative value).
+             
+             The sort function will sort 40 as a value lower than 100.
+             * 
+             */
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

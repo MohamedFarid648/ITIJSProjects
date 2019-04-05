@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--user-scalable=no-->
+	<!-- The above 3 meta tags *must* come first in the head; 
+			any other head content must come *after* these tags -->
+	<title>Bootstrap Template</title>
+	<!-- Bootstrap -->
+	<link href="./bootstrap4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="alert alert-danger fade show alert-dismissible">
+			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+			<button class="close" data-dismiss="alert"><span>&times;</span></button>
+		</div>
+		<div class="alert alert-danger fade show alert-dismissible">
+			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.<a href="#" class="alert-link">clickHere</a>
+			<button class="close" data-dismiss="alert"><span>x</span></button>
+		</div>
+
+
+
+		<div class="progress m-5 w-25">
+
+			<div class="progress-bar bg-success w-75 progress-bar-striped progress-bar-animated">25%</div>
+		</div>
+		<br>
+		<br>
+		<br>
+
+		<button title="<h1>tooltip</h1> message" class="btn btn-primary" data-placement="right" data-html="true" data-toggle="tooltip">click here</button>
+
+
+		<button class="btn btn-warning" data-placement="top" data-content="Pellentesque habitant morbi tristique senectus et <a href='http://www.google.com'>google</a>netus et malesuada fames ac turpis egestas." data-html="true" data-toggle="popover" data-trigger="focus">click here</button>
+		<br>
+		<button class="btn btn-danger" id="b1">open popover</button>
+
+
+
+
+	</div>
+
+	<!-- jQuery & popper (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/popper.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="./bootstrap4/js/bootstrap.min.js"></script>
+
+	<script>
+		$(function() {
+
+			$("[data-toggle='tooltip']").tooltip();
+			$("[data-toggle='popover']").popover();
+
+			$("#b1").on("click", function() {
+
+			//	$("#id").tooltip("show");
+
+			});
+
+		})
+
+	</script>
+</body>
+
+</html>

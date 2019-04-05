@@ -1,0 +1,31 @@
+<div class="" style="margin-left:10%;width:75%">
+<carousel>
+    <slide *ngFor="let product of products , let i=index" >
+      <a routerLink="/productdetails/{{product._id}}"><img src="{{product.image}}" alt="First slide" style="display: block; width: 50%;"></a>
+      <div class="carousel-caption d-none d-md-block">
+        <h3 class="card-title">{{product.name}}</h3>
+     <h4 style="color:rgb(177, 9, 9)"> Offer </h4><h3 class="card-title"> {{product.offer}} %</h3>
+      </div>
+    </slide>
+  </carousel>
+</div>
+<br>
+<br>
+<hr>
+
+  <div class="panel panel-info">
+     <div class="panel-heading">Top Trending</div>
+      <div class="panel-body">
+
+        <div class="col-sm-2" *ngFor="let product of toptrending, let i=index">
+          <a routerLink="/productdetails/{{product._id}}"><img class="img-fluid" src="{{product.image}}" alt="Card image cap"></a>
+            <!--Title-->
+            <h3 class="card-title">{{product.name}}</h3>
+            <!--Text-->
+            <rating *ngIf="loggedUser.nationalID || loggedUser.email==null" [max]="max" [(ngModel)]="product.rating.T"  [readonly]="isReadonly"></rating>
+            <rating *ngIf="!loggedUser.nationalID && loggedUser.email" [max]="max" (click)="updateRating(product.id,product.rating.T)" [(ngModel)]="product.rating.T"  [readonly]="isModified"></rating>
+            <h4>{{ product.price}} EGP</h4>
+      </div>
+
+  </div>
+</div>

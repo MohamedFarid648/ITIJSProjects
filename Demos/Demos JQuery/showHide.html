@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Untitled Document</title>
+	<script src="./scripts/jQuery-D.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			$("input[type='button']").eq(0).click(function() {
+
+				$("img").show(1000);
+
+			});
+			$("input[type='button']").eq(1).click(function() {
+
+				$("img").hide(1000);
+
+			});
+
+			$("input[type='button']").eq(2).click(function() {
+				/*
+
+				if ($("img").is(":hidden"))
+
+					$("img").show(1000);
+				else
+					$("img").hide(1000);
+					*/
+
+				$("img").toggle(1000);
+			});
+
+
+
+		});
+	</script>
+</head>
+
+<body>
+	<input type="button" value="show">
+	<input type="button" value="hide">
+	<input type="button" value="toggle">
+	<br>
+	<img src="./images/3.jpg">
+
+</body>
+</html>

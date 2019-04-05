@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Cookies</title>
+
+</head>
+
+<body>
+	<input type="text" placeholder="enter your name" id="txt1">
+	<input type="button" onclick="saveCookies()" value="save" />
+<script>
+	function saveCookies(){
+		var val=document.getElementById('txt1').value;
+		var date=new Date();
+		date.setMonth(date.getMonth()+1);
+		document.cookie="usrname="+val+";expires="+date;
+		console.log(document.cookie);
+		
+		var cookies= document.cookie;
+		console.log(cookies);
+		var cookiesArr=cookies.split(";");
+		
+		var arr=cookiesArr[0].split("=");//[usrage] [22]
+		console.log(arr[0]);
+		console.log(arr[1]);
+		
+		
+		//delete
+		document.cookie="usrage=;expires=7-7-2007";
+		
+		
+	}
+	
+	</script>
+</body>
+
+</html>

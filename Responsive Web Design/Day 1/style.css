@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 23, 2018, 2:21:06 PM
+    Author     : Mohamed
+*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+div{
+
+    min-height: 50px;//Make Div With heights(if it hasn't a content you can see it')
+    box-sizing: border-box;/*content width = content+border*/
+}
+.row{
+    border: 2px solid blue;
+    width: 100%;
+    display: flex;/*display elements beside each other and remove spaces between elements  */
+    flex-wrap: wrap;/*if content size>12 columns make them in another row*/
+
+
+}
+.menu{
+
+    background-color: black;
+
+}
+.menu ul{
+
+    list-style-type: none;
+}
+.menu ul li {
+
+    float:left;
+   /* width:20%;*/
+    /*    width:auto;*//* Error ??*/
+}
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.ImgDiv{
+    color: white;
+    background-image: url('Images/intro_flower.png');
+    // text-align: center;
+}
+#ImgHeading{
+
+    width: 30%;
+    font-size:20pt;
+
+
+}
+#ImgParagraph{
+    /*
+    position: relative;
+    top:100px;
+    left:20px;
+    max-width:100%; */
+    width: 40%;
+    font-size: 15pt;    
+}
+img{
+
+    max-width: 100%;//remove horizontal scroll bar
+
+}
+.display-xs{display:none;}
+.Categories{
+    
+    background-color: #666e76;
+}
+#Cat_Arch{
+    
+     background-color:#999;
+}
+//.display-lg{display:block;}
+
+/*
+Device Width Breakpoint expression
+Smartphones < 480px (max-width:480px)
+Portrait Tables 481px to 768px (min-width:481px)and (max-width:768px)
+Landscape Tablets|desktop 768px to 940px (min-width:769px) and (max-width:940px)
+Default 940px and up (min-width:941px)
+Large Screens 1210px and up (min-width:480px)
+*/
+
+

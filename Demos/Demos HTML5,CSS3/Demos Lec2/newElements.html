@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Untitled Document</title>
+	<style>
+		input:required {
+			border: 2px solid red;
+
+		}
+
+		
+		input[type="text"]:valid+span {
+
+			visibility: hidden;
+		}
+		
+	</style>
+
+</head>
+
+<body>
+	<form>
+
+		<input type="text" pattern="[a-z]{5,}" autocomplete="off">
+		<span>required field</span>
+		<br>
+		<input type="email" placeholder="enter ur mail">
+
+
+
+		<input type="range" min="0" max="100" step="2" id="r1" value="1"><span id="s1">10</span>
+
+		<input type="submit" value="sendData">
+
+		<input type="text" list="listID">
+		<datalist id="listID">
+			
+			<option value="red"></option>
+			<option value="green"></option>
+			<option value="yellow"></option>
+			<option value="black"></option>
+		</datalist>
+
+	</form>
+
+
+	<meter min="0" max="100" low="20" high="80" value="50">jhhjsdfjs</meter>
+	<meter min="0" max="100" low="20" high="80" value="10">jhhjsdfjs</meter>
+
+	<meter min="0" max="100" low="20" high="80" value="90">jhhjsdfjs</meter>
+
+	<br>
+
+	<progress min=0 max=100 value=50 id="p1">jhsdhj</progress>
+
+	<mark>highlight word</mark>
+	<br>
+	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+	<pre>
+	<code>
+	for(<var>i</var> )
+	console.log()
+	
+</code>
+
+</pre>
+
+
+	<script>
+		var timer = setInterval(function() {
+			document.getElementById("p1").value += 5
+			if (document.getElementById("p1").value >= 100)
+				clearInterval(timer);
+
+		}, 100);
+
+		document.querySelector("#r1").onchange = function() {
+			document.getElementById("s1").innerHTML = this.value;
+
+		}
+	</script>
+
+</body>
+
+</html>

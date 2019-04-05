@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <div>
+            <a href="Lec 1,2/public_html/index.html" target="_blank">Lec1,2(Html,CSS)</a>
+            <br/>           <br/>
+         
+            <a href="Lec 3/index.html" target="_blank">Lec 3(JS1)</a>
+            <br/>           <br/>
+           
+            <a href="Lec 4/index.html" target="_blank">Lec 4(JS2)</a>
+            <br/>           <br/>
+           
+            <a href="Lec 5/index.html" target="_blank">Lec 5(JS3)</a>
+            <br/>           <br/>
+
+            <a href="Lec 6/index.html" target="_blank">Lec 6(JS4)</a>
+            <br/>           <br/>
+
+            <a href="Lec 7/index.html" target="_blank">Lec 7(JS5)</a>
+            <br/>           <br/>
+
+            <a href="Lec 8/index.html" target="_blank">Lec 8(JS6)</a>
+            <br/>           <br/>
+
+
+            <a href="Revision/index.html" target="_blank"> Revision </a>
+            <br/>           <br/>
+
+        </div>
+        <script>
+            var x = document.createElement("p");
+            var textX = document.createTextNode("Last Modified in:" + document.lastModified);
+
+            x.appendChild(textX);
+
+            document.body.appendChild(x);
+
+            //A typical solution is to compare the absolute difference between two numbers with the special constant Number.EPSILON:
+
+            function areTheNumbersAlmostEqual(num1, num2) {
+                return Math.abs(num1 - num2) < Number.EPSILON;
+            }
+            console.log(areTheNumbersAlmostEqual(0.1 + 0.2, 0.3));
+
+        </script>
+    </body>
+</html>

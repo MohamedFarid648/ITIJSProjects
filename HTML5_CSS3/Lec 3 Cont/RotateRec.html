@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Rotate Rectangle</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+
+        <div style="text-align: center">
+            <canvas width="500" height="400" id="LetterCanvas" 
+                    style="border: 1px solid black;
+                    position:relative;
+                    top:30px">
+                There is a canvas here but your browser doesn't support
+            </canvas>
+        </div>
+
+        <script>
+            //myContext.translate(200, 200);
+
+            var myConvas = document.getElementById("LetterCanvas");
+            var myContext = myConvas.getContext("2d");
+            myContext.beginPath();
+            myContext.fillStyle = "skyblue";
+            var x = 20, y = 20;
+            var counter = 1;
+            var check = false;
+            var timer;
+            myContext.translate(200, 200);
+            // translate the center of the canvas
+            //(it made 0,0 as a center so it draws around it so 
+            //we change the center to 200,200
+            function drawRec() {
+                if (counter == 1) {
+                    check = true;
+                }
+                if (check) {
+                    myContext.fillStyle = "skyblue";
+                    myContext.rotate(20 * Math.PI / 180);
+                    //First time rotate old angel(default) with 20 * Math.PI / 180 =180deg
+                    //then rotate again old angel(angel from perviuos rotate) 
+
+                    myContext.fillRect(x, y, 50, 80);
+                    counter += 1;
+                    //Draw Sky blue Rect with clock wise
+                }
+
+                if (counter > 18) //18*20=360(2PI)
+                {
+                    // clearInterval(timer);
+                    /*myContext.fillStyle = "white";
+                     myContext.beginPath();
+                     myContext.fillRect(20, 20, 50, 80);*/
+                    check = false;
+                }
+                if (!check) {
+                    myContext.fillStyle = "green";
+                    myContext.rotate(-20 * Math.PI / 180);//increase the value from 360 
+                    myContext.fillRect(x, y, 50, 80);
+                    counter--;
+                }
+
+                console.log("counter=" + counter);
+               // console.log("20 * Math.PI / 180=" + 20 * Math.PI / 180);
+            }
+            // drawRec();
+            function callDrawRect() {
+                timer = setInterval(drawRec, 500);
+            }
+            callDrawRect();
+
+
+
+        </script>
+    </body>
+</html>

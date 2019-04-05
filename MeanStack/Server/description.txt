@@ -1,0 +1,28 @@
+Preparing your Environment :
+
+1.install node,npm,nodemon(server)
+2.install mongodb : https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-windows/ 
+3.start db :
+C:\Program Files\MongoDB\Server\3.6\bin> mongod
+ https://docs.mongodb.com/v3.0/tutorial/getting-started-with-the-mongo-shell/ 
+
+
+***************************************************************
+
+4.npm init
+5.install any packages
+***************************************************************
+Require Modules and use them :
+
+6.DB:
+   mongodb driver: https://www.w3schools.com/nodejs/nodejs_mongodb_create_db.asp 
+or mongoose: http://mongoosejs.com/docs/index.html 
+***************************************************************
+Publish app online :
+
+Node online:
+https://www.heroku.com/
+
+MongoDB Online:
+https://mlab.com/plans/pricing/
+

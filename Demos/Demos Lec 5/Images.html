@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Untitled Document</title>
+
+
+        <script>
+            /*
+             function flipImg(myImg) {
+             
+             myImg.width = "200";
+             myImg.height = "200";
+             
+             //var img1Src = document.images[0].src;
+             //document.images[1].src = img1Src;
+             
+             
+             }
+             
+             function returnSrc(myImg) {
+             myImg.width = "150";
+             myImg.height = "150";
+             
+             
+             }
+             */
+            var imgArr = [];
+            for (i = 0; i < 5; i++)
+                imgArr[i] = (i + 1) + ".jpg";
+            var count = 0;
+            var timerID;
+
+            function rotateImg() {
+
+                if (count == 5)
+                    count = 0;
+                document.images[0].src = imgArr[count];
+                count++;
+
+                timerID = setTimeout(rotateImg, 1000);
+
+
+            }
+            function stopRot() {
+
+                clearTimeout(timerID);
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <img src="2.jpg" width="150" height="150" onmouseover="rotateImg()" onmouseout="stopRot()">
+        <!--onmouseover="flipImg(this)" onmouseout="returnSrc(this)" />
+        -->
+    </body>
+
+</html>

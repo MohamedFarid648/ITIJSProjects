@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Register Cookie</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <div>
+
+            <form method="GET" action="WelcomeCookie_1.html">
+
+                <label>Enter Your Name:</label><input type="text" id="UserName" required="" name="UserName"/><br/><br/>
+                <label>Enter Your Age</label><input type="number" id="UserAge" name="UserAge"/><br/><br/>
+                <label>Select Your Gender:</label>
+
+                <input type="radio"  name="UserGender" value="Male"/><img src="../images/male.jpg" alt="Male">
+                <input type="radio"  name="UserGender" value="Female"/><img src="../images/female.jpg" alt="Female">
+
+                <br/><br/>
+                <label>Select Your Favorite Color:</label>
+                <select id="UserFavoriteColor"  required name="UserFavoriteColor">
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>
+                <br/><br/>
+                <button id="registerBTN" onclick="registerClick()">Register</button>
+            </form>
+
+        </div>
+        <script type="text/javascript">
+            
+            var UserObject=JSON.parse(localStorage.getItem("UserObject"));
+            
+            if (UserObject!= null)
+            {
+
+
+                document.body.innerHTML = "";
+                document.write("Welcome : " + UserObject.userName);
+                document.write("<br><button id='Logout' onclick='Logout()'>Logout</button>");
+                var logout = document.getElementById("Logout");
+                logout.onClick = Logout;
+            }
+
+            function Logout() {
+
+                localStorage.removeItem("UserObject");
+                sessionStorage.removeItem("counter");
+                location.reload();
+
+            }
+            var registerButton = document.getElementById("registerBTN");
+            //    document.getElementById("registerBTN").addEventListener("click", registerClick,false);
+            var counter, i;
+            function registerClick() {//registerClick(eventObject, thisObject) {
+
+                var userName = document.getElementById("UserName").value;
+                var userAge = document.getElementById("UserAge").value;
+                var userGender="Male";
+                var userGenderArray = document.getElementsByName("UserGender");
+                for (counter = 0; counter < userGenderArray.length; counter++) {
+
+                    if (userGenderArray[counter].checked)
+                        userGender = userGenderArray[counter].value;
+                }
+                var userFavoriteColorArr = document.getElementById("UserFavoriteColor");
+                var userFavoriteColor;
+                var selectedLength = userFavoriteColorArr.length;
+                for (counter = 0; counter < selectedLength; counter++)
+                {
+                    if (userFavoriteColorArr.options[counter].selected)
+                        userFavoriteColor = userFavoriteColorArr.options[counter].text;
+                }
+                //var counter = 0;
+
+                UserObject={
+                    userName:userName,
+                    userAge:userAge,
+                    userGender:userGender,
+                    userFavoriteColor:userFavoriteColor,
+                    ggh:"fff"
+                }
+                localStorage.setItem("UserObject", JSON.stringify(UserObject));
+                
+                //Convert from Object {name:"Ahmed"} to String(JSON) "{"name":"Ahmed"}" 
+               
+            }
+        </script>
+    </body>
+</html>

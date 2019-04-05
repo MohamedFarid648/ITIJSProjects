@@ -1,0 +1,47 @@
+<app-navcomp></app-navcomp>
+<router-outlet>
+
+</router-outlet>
+
+
+
+<h1 [innerHTML]='title'></h1>
+<h1>{{title | uppercase }}</h1>
+<div>{{today|date:'longDate'}}</div>
+<div>{{ 123 | currency:'EUR':'4.1-2'}}</div>
+
+<div>{{ 12.345 | number:'4.2-2'}}</div>
+<button class="btn btn-primary" (click)='isDisplayed=!isDisplayed'>changeDisplay</button>
+<div *ngIf="isDisplayed; then trueVar else falseVar">checking condition
+</div>
+<ng-template #trueVar>this is a a true result</ng-template>
+
+<ng-template #falseVar>this is a a false result</ng-template>
+
+
+
+
+
+<table class="table table-hover">
+    <!--<tr>
+        <td [attr.colspan]='colS'>ay 7aga</td>
+    </tr>
+  -->
+
+    <tr>
+        <td>Index</td>
+        <td>name</td>
+        <td>dept</td>
+        <td (click)="filterStd()">salary</td>
+    </tr>
+    <tr *ngFor="let s of Students;index as i;even as e">
+        <td [ngClass]='{"bg-success":e}'>{{i+1}} <span *ngIf="!e">even</span></td>
+        <td><span *ngIf="f!=i">{{s.name}}</span><input type="text" #txt [(ngModel)]='s.name' *ngIf="f==i" (change)='makeChange(txt.value,i)'></td>
+        <td>{{s.dept}}</td>
+
+        <td>{{s.salary}}</td>
+        <td><button class="btn btn-success" (click)='f=i;updateStudent(i)'>update</button></td>
+        <td><button class="btn btn-danger" (click)='deleteStudent(i)'>delete</button></td>
+    </tr>
+
+</table>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Paper,Rock,Scissor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <div>
+            <span id="RockSpan"  ondragover="allowDrop(event)"
+                  ondrop="drop(event,this)" >
+                <img src="images/Rock.png" draggable="true"
+                     ondragstart="drag(event)" id="Rock" alt=""/> 
+
+            </span>
+            <span id="PaperSpan"  ondragover="allowDrop(event)"
+                  ondrop="drop(event,this)" 
+                  >
+
+                <img src="images/Paper.png" draggable="true"
+                     ondragstart="drag(event)" id="Paper" alt=""/>
+
+            </span>
+            <span id="ScissorSpan"  ondragover="allowDrop(event)"
+                  ondrop="drop(event,this)" >
+
+                <img src="images/Scissors.png" draggable="true"
+                     ondragstart="drag(event)" id="Scissor" alt=""/>
+
+            </span>
+
+
+
+        </div>
+        <script>
+            function allowDrop(event) {//for span
+                event.preventDefault();//1
+
+            }
+            function drag(event) {//for image
+
+                event.dataTransfer.setData("text/plain", event.target.id);//2
+            }
+            function drop(event,span) {
+                event.preventDefault();
+                var data = event.dataTransfer.getData("text/plain");
+                ////3 =>Get Img from drag()
+                 console.log("data:" + data);
+                //event.target.innerHtml = "";
+              //  if(data=="Rock"){
+                  //  console.log("span:"+span.name);
+                    
+                //}
+                console.log("event.target:" + event.target);
+                var x= document.getElementById(data);
+                console.log("document.getElementById(data):" +x);
+                event.target.appendChild(document.getElementById(data));//4 =>Set Img  On span
+            
+    }
+            
+            
+
+        </script>
+    </body>
+</html>

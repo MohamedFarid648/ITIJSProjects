@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>BOM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+
+            var myWindow;
+            var horizontal = 0, vertical = 0;
+
+            var myTimerUP;
+            var myTimerDown;
+
+            function openWindow() {
+
+
+                myWindow = window.open("tryBOMObject_ChildWindow.html", "ChildWindow", "width=200,height=250");
+                // if(myWindow.opened)
+                // MoveWindowUP(0, 0);
+                MoveWindowUP();
+                // mainMethod();
+
+                /*             window.onresize = function() {
+                 window.scrollBy(horizontal+10, vertical+10);
+                 }*/
+            }
+            function closeWindow() {
+
+
+                myWindow.close();
+
+            }
+
+            var i2 = 0;
+            function MoveWindowDown() {//(horizontal, vertical) {
+                i2++;
+                //  if (!myWindow.closed) {
+                horizontal -= 10;
+                vertical -= 10;
+                myWindow.moveBy(horizontal, vertical);
+                if (horizontal == 0 && vertical == 0) {
+                    console.log("I will try MoveWindowUP ");
+
+                    window.clearTimeout(myTimerUp);
+                    MoveWindowUp();
+                }
+                console.log("MoveWindowDown: " + i2);
+                console.log("horizontal :" + horizontal);
+                console.log("vertical :" + vertical);
+
+                myTimerUp = setTimeout(MoveWindowDown, 1000);
+
+            }
+            var i = 0;
+            function MoveWindowUP() {//(horizontal, vertical) {)
+
+                // if (!myWindow.closed) {
+                horizontal += 10;
+                vertical += 10;
+                i++;
+                myWindow.moveBy(horizontal, vertical);
+                if (horizontal === 70 && vertical === 70) {
+                    console.log("I will try MoveWindowDown ");
+                    myWindow.clearTimeout(myTimerUP);
+                     MoveWindowDown();
+                }
+                console.log("MoveWindowUP: " + i);
+                console.log("horizontal :" + horizontal);
+                console.log("vertical :" + vertical);
+
+                myTimerUP = setTimeout(MoveWindowUP, 1000);
+
+            }
+            //   openWindow();
+
+
+        </script>
+    </head>
+    <body>
+        <div>
+
+            <button onclick="closeWindow()">Stop</button>
+            <button onclick="openWindow()
+                            ;">Open</button>
+
+        </div>
+    </body>
+</html>

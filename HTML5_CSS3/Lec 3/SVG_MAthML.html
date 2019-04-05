@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>SVG_Math</title>
+        <!-- PolyFill--> <script src="http://fred-wang.github.io/mathjax.js/mpadded-min.js"></script>
+        <!--FallBack For browsers doesn't support Math ML like chrome -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+            #a{
+                position: relative;
+                left:280px;
+                top:10px;
+            }
+            #b{
+                position: relative;
+                left:330px;
+                //top:10px;
+                bottom: 50px;
+            }
+            #c{
+                position: relative;
+                left:250px;
+                //top:10px;
+                bottom: 50px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <span id="a">a</span>
+        <span id="b">b</span>
+        <span id="c">c</span>
+        <svg xmlns="http://www.w3.org/2000/svg" ><!--width="400" height="300" style="border: 1px solid green" -->
+
+
+        <!-- <rect x="10" y="10" width="30" height="30" fill="red" stroke="blue"/>
+        <!--<polygon points="200,10 250,190 160,210" style="fill:red;stroke:purple;stroke-width:1" />
+        <polygon points="200,20 400,200 400,10" style="fill:red;stroke:green;stroke-width:1" />
+     
+         <polygon points="200,210 400,300 200,100" style="fill:red;stroke:purple;stroke-width:1"
+             style="transform: rotate(90deg);"/>
+        -->
+
+        <polygon points="200,200 400,200 300,10" style="fill:red;stroke:green;stroke-width:1;position: left" />
+        </svg>
+        <br><br>
+        <h3 style="margin-left: 200px;">according to pythagoras theorem</h3>
+        <math xmlns="https://www.w3.org/1998/Math/MathML" style="color:red;margin-left: 200px;">
+
+        <mi>C</mi>
+        <mo>=</mo>
+        <mroot>
+
+        <mrow>
+        <mrow>
+        <msup>
+        <mi>a</mi>
+        <mn>2</mn>
+        </msup>
+        </mrow>
+        <mo>+</mo>
+
+        <mrow>
+        <msup>
+        <mi>b</mi>
+        <mn>2</mn>
+        </msup>
+        </mrow>
+
+
+        </mrow>
+
+        <mn>2</mn>
+
+        <!--Identifier(Varaible)-->
+
+
+
+
+        </mroot>
+
+
+        </math>
+    </body>
+</html>

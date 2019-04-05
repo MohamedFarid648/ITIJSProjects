@@ -1,0 +1,17 @@
+.badge
+{
+    background-color:rgb(165, 50, 136);
+    color: white;
+    font-size:16px;
+ }
+
+ img
+ {
+    width:150px;
+    height:200px;
+ }
+
+.pagination :hover { 
+    background-color: #D3D3D3;
+    cursor: pointer;
+}

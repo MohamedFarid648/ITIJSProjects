@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Untitled Document</title>
+        <style>
+            img {
+
+                position: absolute;
+                left: 440px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="./images/tiger.gif" onclick="SetIntervalMoveTiger()">
+
+        <script>
+            var t, x;
+            function moveTiger() {
+
+                x = parseInt(getComputedStyle(document.images[0]).left);
+                console.log("x="+x);
+                x -= 2;
+                document.images[0].style.left = x + "px";
+                if (x == 0)
+                    clearInterval(t);
+            }
+            function SetIntervalMoveTiger() {
+                t = setInterval(moveTiger, 100);
+
+                
+
+            }
+
+
+
+        </script>
+    </body>
+
+</html>

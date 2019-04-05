@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Untitled Document</title>
+
+</head>
+
+<body>
+	<div id="d1">x</div>
+
+	<input type="button" id="btn1" value="clearInterval">
+	<br>
+	<input type="text" id="txt1">
+	<input type="text" id="txt2">
+	<input type="button" id="btn2" value="start worker">
+	<div id="d2"></div>
+
+	<script>
+		var timer;
+		timer = setInterval(function() {
+			document.getElementById("d1").innerHTML += ", x"
+		}, 1000);
+
+		document.getElementById("btn1").onclick = function() {
+			clearInterval(timer);
+
+		}
+
+		var myWorker = new Worker("script.js");
+		document.getElementById("btn2").addEventListener("click", function() {
+			var txt1 = parseInt(document.getElementById("txt1").value);
+			var txt2 = parseInt(document.getElementById("txt2").value);
+			myWorker.postMessage([txt1, txt2])
+
+
+		})
+
+
+		myWorker.onmessage = function(e) {
+
+			document.getElementById("d2").innerHTML = e.data[0];
+			console.log(e.data[1]);
+			console.log(e.data[2]);
+			console.log(e.data[3]);
+		}
+	</script>
+</body>
+</html>

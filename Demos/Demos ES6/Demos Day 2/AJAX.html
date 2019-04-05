@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Untitled Document</title>
+
+</head>
+
+<body>
+	<h1>AJAX DEMO</h1>
+	<button></button>
+	<div id="d1"></div>
+	<script>
+		var obj = {};
+		var xhr = new XMLHttpRequest();
+
+		console.log(xhr.readyState);
+		//xhr.open("Get", "greeting.txt")
+		xhr.open("Get", "std.json")
+		console.log(xhr.readyState);
+		xhr.onreadystatechange = function() {
+			console.log(xhr.readyState);
+			if (xhr.status == 200 && xhr.readyState == 4) {
+
+				//document.getElementById("d1").innerHTML=(xhr.responseText);
+
+				var txt = "<table border='2' bordercolor='red'><tr><th>Name</th><th>dept</th><th>Salary</th></tr>"
+
+				obj = JSON.parse(xhr.responseText)
+				//try using foreach
+				//
+
+
+				txt += "<tr>"
+				for (prop in obj[0]) {
+					txt += "<td>" + obj[0][prop] + "</td>"
+
+
+				}
+
+				txt += "</tr></table>"
+
+				document.getElementById('d1').innerHTML = txt;
+			}
+
+
+		}
+
+
+
+
+		xhr.send("");
+	</script>
+
+
+
+
+</body>
+</html>

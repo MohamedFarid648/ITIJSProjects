@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Photo Gallary</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+
+            var MyImages = [], i, timer;
+            for (i = 0; i < 5; i++)
+                MyImages[i] = (i + 1) + ".jpg";
+            var count = 0;
+
+            function Next() {
+                //  console.log("hhh");
+                var myImg = document.images[0];//<img src="SlideShow/1.jpg"../>
+                var myImgSrc = myImg.src;//"SlideShow/1.jpg"
+                var indexOfJPG = myImgSrc.indexOf(".jpg");//Index:56
+                var ImgName = myImgSrc.charAt(indexOfJPG - 1);//1,2,3 as String
+                ImgName = parseInt(ImgName) + 1;//1,2,3 as a Number
+                if (ImgName > 5)
+                    ImgName = 5;
+
+                myImg.src = "SlideShow/" + ImgName + ".jpg/";
+                console.log(myImg.src);
+
+            }
+            function Pervious() {
+                var myImg = document.images[0];//<img src="SlideShow/1.jpg"../>
+                var myImgSrc = myImg.src;//"SlideShow/1.jpg"
+                var indexOfJPG = myImgSrc.indexOf(".jpg");//Index:56
+                var ImgName = myImgSrc.charAt(indexOfJPG - 1);//1,2,3 as String
+                ImgName = parseInt(ImgName) - 1;//1,2,3 as a Number
+                if (ImgName < 1)
+                    ImgName = 1;
+
+                myImg.src = "SlideShow/" + ImgName + ".jpg/";
+                console.log(myImg.src);
+
+            }
+            function Stop() {
+                window.clearTimeout(timer);
+
+            }
+            function SlideShow() {
+                var myImg = document.images[0];
+                if (count > 4)
+                    count = 0;
+                console.log("count=" + count);
+                myImg.src = "SlideShow/" + MyImages[count];
+                count++;
+
+                console.log(myImg.src);
+
+//Now when user click on button it will get the next image:1.jpg,2.jpg,...
+                timer = setTimeout(SlideShow, 1000);
+//Now when user click on button it will get the next image:1.jpg,2.jpg,...,and repeat  it every 1sec
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Show Images</h1>
+        <hr/>
+        <button onclick="Next()">Next</button>
+        <button onclick="SlideShow()">SlideShow</button>
+        <button onclick="Stop()">Stop</button>
+        <button onclick="Pervious()">Pervious</button>
+        <br/> <br/> <br/>
+        <img src="SlideShow/1.jpg" width="300" height="300" name="MyImage">
+
+        <script>
+
+            var myImg = document.images[0].src;
+            //  myImg="SlideShow/1.jpg";
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Hover To Blink Animation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+
+            div{
+                border:2px solid red;
+                border-radius: 10px;
+                width:150px;
+                height:20px;
+                background-color: yellow;
+                margin-top: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                /*margin-right: auto; =>make space from right like space from left*/
+
+            }
+            @keyframes HoverAnimation {
+
+
+                0%{
+
+
+
+                    border:2px solid red;
+                    border-radius: 10px;
+                    width:150px;
+                    height:20px;
+                    background-color: blue;
+
+                }
+                50%{
+
+
+                    border:2px solid red;
+                    border-radius: 10px;
+                    width:150px;
+                    height:20px;
+                    background-color: green;
+                }
+                100%{
+
+                    border:2px solid red;
+                    border-radius: 10px;
+                    width:150px;
+                    height:20px;
+                    background-color: pink;
+                    box-shadow: 10px 10px 10px
+                }
+
+            }
+            div:hover{
+                animation-name: HoverAnimation;
+                animation-iteration-count:  infinite;
+                animation-delay: 1s;
+                animation-duration: 5s;
+                // animation-direction:reverse; //to start from 100% to 0%
+
+                animation-direction: alternate;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>
+
+            Hover To Blink
+
+        </div>
+    </body>
+</html>

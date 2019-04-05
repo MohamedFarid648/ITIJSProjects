@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Range Color</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <style>
+
+            input,span,label{
+                display: block;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+
+            <label>Red:</label>
+            <input type="range" min="1" max="255" step="1" value="1" id="Red">
+            <span id="redVal"></span>
+            <br><br>
+            <label>Green</label>
+            <input type="range" min="1" max="255" step="1" value="1" id="Green">
+            <span id="greenVal"></span>
+
+            <br><br>
+            <label>Blue</label>
+            <input type="range" min="0" max="255" step="1" value="1" id="Blue">
+            <span id="blueVal"></span>
+
+            <br/>
+            <div id="MyText">
+                Change the 3 Color Ranges above and observe my color Change
+            </div>
+        </div>
+
+
+        <script>
+            var red = document.getElementById("Red");
+            var green = document.getElementById("Green");
+            var blue = document.getElementById("Blue");
+
+            var redVal = document.getElementById("redVal");
+            var greenVal = document.getElementById("greenVal");
+            var blueVal = document.getElementById("blueVal");
+
+
+
+            red.onchange = function () {
+
+                  redVal.innerHTML=red.value;
+
+                document.getElementById("MyText").style.color = "rgb(" + red.value + "," + green.value + "," + blue.value + ")";
+
+            }
+            green.onchange = function () {
+
+                greenVal.innerHTML=green.value;
+                document.getElementById("MyText").style.color = "rgb(" + red.value + "," + green.value + "," + blue.value + ")";
+
+            }
+            blue.onchange = function () {
+
+               blueVal.innerHTML=blue.value;
+                document.getElementById("MyText").style.color = "rgb(" + red.value + "," + green.value + "," + blue.value + ")";
+
+            }
+
+
+
+        </script>
+
+    </body>
+</html>

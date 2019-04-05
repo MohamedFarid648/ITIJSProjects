@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" type="text/css" rel="stylesheet"/>
+
+    </head>
+    <body>
+        <div class="centerAll">
+
+            <form action="page2.html">
+             
+                <table border="1">
+                    <tr>
+                        <td><label for="FirstName">First Name</label></td>
+                        <td><input type="text" id="FirstName"/></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="LastName">Last Name</label></td>
+                        <td><input type="text" id="LastName"/></td>
+                    </tr>
+
+                    <tr>
+                        <td> <label for="Password"> Password </label></td>
+                        <td> <input type="password" id="Password"/></td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="2"> <label for="Male"> Gender </label></td>
+                        <td> <input type="radio" name="Gender" id="Male" value="Male"/>Male</td>
+                    </tr>
+                    <tr>
+
+                        <td> <input type="radio" name="Gender" value="Female"/>Female</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="BDate"> Birth Date </label>
+                            <select name="BDate">
+                                <option>[Select a Month]</option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>Description</option>
+                            </select>
+                            <!-- <input type="date" name="BDate" id="BDate" />-->
+                        </td>
+                        <td> 
+                            <!--     <input type="number" min="1" max="31" name="Day" placeholder="dd" /> 
+                                 <input type="number" min="1920" max="2010" name="Year" placeholder="yyyy"/>-->
+
+                            <input type="text"  maxlength="2" size="2" name="Day" placeholder="dd" /> <!--size= size of text box ,,
+                                                                                                      maxlength size of value in text box -->
+                            <input type="text" maxlength="4" size="4" name="Year" placeholder="yyyy"/>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2">
+
+                            <div class="centerClass">
+                                <u><b>Intersts</b></u>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox" name="Sports" value="Sports"/>Sports</td>
+                        <td><input type="checkbox" name="Sports" value="Sports"/>Music</td>
+
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox" name="Sports" value="Sports"/>Boooks</td>
+                        <td><input type="checkbox" name="Sports" value="Sports"/>Computer Staff</td>
+
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox"  name="Fashion" value="Fashion"/>Fashion</td>
+                        <td><input type="checkbox" name="Movies" value="Movies"/>Movies</td>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div class="centerClass">    
+                                <input type="submit"/>
+                            </div>
+                        </td>
+
+
+                    </tr>
+
+                </table>
+
+
+
+
+            </form>
+
+        </div>
+    </body>
+</html>

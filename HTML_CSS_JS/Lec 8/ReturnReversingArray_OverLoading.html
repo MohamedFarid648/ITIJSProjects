@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ReturnReveringArray_OverLoading</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            returnReversedArray(1, 2, 3);
+            returnReversedArray(10, 5, 4, 8, 100);
+            returnReversedArray(4, 5, 87, 45, 69, 4);
+
+            function returnReversedArray() {
+
+                var myArr = [];
+
+                for (i = 0; i < arguments.length; i++)
+                    myArr.push(arguments[i]);
+
+                var myStr = "<br/><br/>You have entered the values of :";
+                document.write(myStr.fontcolor("red") + myArr.join(","));
+
+                myStr = "<br/>You have entered the values (after sorting descending) :";
+                myArr.sort(function (a, b) {
+                    return b - a;
+                });
+                document.write(myStr.fontcolor("red") + myArr.join(","));
+
+                document.write("<br/><br/>");
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

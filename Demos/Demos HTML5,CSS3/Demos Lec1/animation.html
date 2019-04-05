@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Untitled Document</title>
+	<style>
+		div {
+			border: 2px solid red;
+			width: 15px;
+			height: 15px;
+			background-color: aliceblue;
+		}
+
+		@keyframes myAnimation {
+
+			0% {
+				border: 2px solid red;
+				width: 15px;
+				height: 15px;
+				background-color: aliceblue;
+			}
+			50% {
+				border: 12px solid yellow;
+				width: 150px;
+				height: 150px;
+				background-color: bisque;
+			}
+
+
+			100% {
+				border: 20px solid green;
+				width: 350px;
+				height: 350px;
+				background-color: blue;
+
+
+			}
+
+
+		}
+
+		div {
+			animation-name: myAnimation;
+			animation-duration: 5s;
+			animation-delay: 2s;
+			animation-iteration-count: 5;
+			animation-direction: alternate;
+			animation-timing-function: linear;
+
+
+		}
+	</style>
+
+
+</head>
+
+<body>
+
+	<div></div>
+
+</body>
+</html>

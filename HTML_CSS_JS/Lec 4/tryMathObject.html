@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Try Math Object</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var radius;
+
+            do {
+                radius = prompt("Enter radius of your circle please ^_^ :");
+            } while (radius == null)
+
+            var area = radius * radius * Math.PI;
+
+            document.write("<br/><br/>Area is :" + area);
+
+            document.write("<br/><br/>*********************************************************************");
+
+            var squareNumber;
+
+            do {
+                squareNumber = prompt("Calculate Square Root of: ^_^ :");
+            } while (squareNumber == null)
+
+            var squareResult = Math.sqrt(squareNumber);
+
+            document.write("<br/><br/>Square Result is :" + squareResult);
+
+
+
+            /* Math.sin(x) returns the sine (a value between - 1 and 1) of the angle x (given in radians).
+             If you want to use degrees instead of radians, you have to convert degrees to radians:
+             
+             Angle in radians = Angle in degrees x PI / 180
+             Math.sin(90 * Math.PI / 180); // returns 1 (the sine of 90 degrees)
+             
+             */
+            document.write("<br/><br/>*********************************************************************");
+
+            var angle;
+            do {
+                angle = prompt("Enter your Angle please ^_^ :");
+            } while (angle == null)
+
+            var angleResult = Math.cos(angle * (Math.PI / 180));
+            angleResult = angleResult.toFixed(0);
+            document.write("<br/><br/>Cos " + angle + " is :" + angleResult);
+            document.write("<br/><br/>*********************************************************************");
+            /*
+             * 
+             * radians = degrees * (pi/180)
+             
+             degrees = radians * (180/pi)
+             */
+            var n;
+
+            n = Math.cos(0 * (Math.PI / 180));
+            n = n.toFixed(1);
+            document.write("<br/><br/> cos 0:" + n);
+            n = Math.sin(0 * (Math.PI / 180));
+            n = n.toFixed(1);
+            document.write("<br/><br/>sin 0:" + n);
+
+
+            n = Math.cos(90 * (Math.PI / 180));
+            n = n.toFixed(1);
+            document.write("<br/><br/> cos 90:" + n);
+            n = Math.sin(90 * (Math.PI / 180));
+            n = n.toFixed(1);
+            document.write("<br/><br/>sin 90:" + n);
+            n = 180 * (Math.PI / 180);
+            n = n.toFixed(0);
+
+            n = Math.cos(180 * (Math.PI / 180));
+            n = n.toFixed(1);
+            document.write("<br/><br/> cos 180:" + n);
+            n = Math.sin(180 * (Math.PI / 180));
+            n = n.toFixed(1);
+            document.write("<br/><br/>sin 180:" + n);
+
+            n = Math.cos(270 * (Math.PI / 180));
+            n = n.toFixed(1);
+            document.write("<br/><br/> cos 270:" + n);
+            n = Math.sin(270 * (Math.PI / 180));
+            n = n.toFixed(1);
+            document.write("<br/><br/>sin 270:" + n);
+
+            n = Math.cos(360 * (Math.PI / 180));
+            n = n.toFixed(1);
+            document.write("<br/><br/> cos 360:" + n);
+            n = Math.sin(360 * (Math.PI / 180));
+            n = n.toFixed(1);
+            document.write("<br/><br/>sin 360:" + n);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Segoe UI, Arial, Helvetica, Sans-Serif;
+                font-size: 0.8em;
+            }
+
+            #playPause {
+                width: 55px;
+            }
+
+            video {
+                width: 640px;
+                height: 360px;
+            }
+
+            #scrubber {
+                width: 560px;
+                color: antiquewhite;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <!--video is similar to audio-->
+        <!--video controls loop autoplay poster="p.png"-->
+        <!--either autoplay or preload-->
+        <video id="vid" poster="./image/p.png">
+            <source src="./video/big_buck_bunny.mp4" />
+            <source src="./video/big_buck_bunny.ogv" />
+            <source src="./video/big_buck_bunny.webm" />
+
+        </video>
+
+        <div>
+
+            <input type="range" id="scrubber" min="0" value="0" step="1" max="60" />
+
+            <span id="remainingTime">0:00</span> / <span id="totalTime">0:00</span>
+        </div>
+        <div>
+            <button id="playPause">Play</button>
+            <button id="stop">Stop</button>
+            <button id="begin">&lt;&lt;</button>
+            <button id="rewind">&lt;</button>
+            <button id="fastForward">&gt;</button>
+            <button id="end">&gt;&gt;</button>
+            <input type="range" id="volume" min="0" step="0.1" max="1" />
+            <button id="mute">Mute</button>
+        </div>
+        <div>
+            <span>Speed</span><input type="range" id="playbackRate" min="1" value="1" step="1" max="5" />
+        </div>
+
+        <script>
+            var vid = document.getElementById("vid");
+            var playPause = document.getElementById("playPause");
+            var scrubber = document.getElementById("scrubber");
+            var totalTime = document.getElementById("totalTime");
+            var stop = document.getElementById("stop");
+            var mute = document.getElementById("mute");
+            var begin = document.getElementById("begin");
+            var rewind = document.getElementById("rewind");
+            var end = document.getElementById("end");
+            var fastForward = document.getElementById("fastForward");
+            var remainingTime = document.getElementById("remainingTime");
+            var volume = document.getElementById("volume");
+            var playbackRate = document.getElementById("playbackRate");
+            // totalTime.value=vid.duration;
+
+            playPause.onclick = function () {
+
+                vid.play();
+
+                var x = parseFloat(vid.duration);
+                if (x > 60 && x < 90)
+                    totalTime.innerText = "1:00";
+
+
+            }
+            begin.addEventListener("click", function () {
+                vid.currentTime = 0;
+                //vid.play();
+
+            });
+            end.addEventListener("click", function () {
+                vid.currentTime = 60;
+                scrubber.value = vid.currentTime;
+                remainingTime.innerText = parseInt(vid.currentTime);
+                //vid.load();
+
+            });
+
+            rewind.onclick=function () {
+                vid.currentTime -=5;
+                scrubber.value = vid.currentTime;
+                remainingTime.innerText = parseInt(vid.currentTime);
+                //vid.play();
+
+            };
+            fastForward.addEventListener("click", function () {
+                vid.currentTime+=5;
+                scrubber.value = vid.currentTime;
+                remainingTime.innerText = parseInt(vid.currentTime);
+                //vid.play();
+            });
+            scrubber.addEventListener("change", function () {
+
+                vid.currentTime = parseInt(scrubber.value);
+                vid.play();
+            });
+            volume.addEventListener("change", function () {
+                vid.muted = false;
+                vid.volume = parseInt(volume.value);
+
+                //vid.play();
+            });
+
+            playbackRate.addEventListener("change", function () {
+
+                vid.playbackRate = parseFloat(playbackRate.value);
+                //vid.play();
+            });
+            stop.addEventListener("click", function () {
+
+                vid.pause();
+            });
+            mute.addEventListener("click", function () {
+
+                vid.muted = true;
+                volume.value = 0;
+            });
+
+
+
+            vid.addEventListener("timeupdate", function () {
+
+                scrubber.value = vid.currentTime;
+                remainingTime.innerText = parseInt(vid.currentTime);
+                var y = parseFloat(vid.currentTime);
+                if (y < 60)
+                    remainingTime.innerText = parseInt(vid.currentTime);
+                else
+                    remainingTime.innerText = "1:00";
+
+            })
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Alert ASCII</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body onkeypress="myKeyPress(event)">
+        <h1>Press a Key Please ^_^</h1>
+
+
+        <form>
+            <input type="text" onkeypress="return myKeyPress(event)" />
+        </form>
+        <script>
+//https://www.w3schools.com/jsref/event_key_keycode.asp
+         //  document.onKeyPress = myKeyPress;
+
+document.addEventListener('contextmenu', event => event.preventDefault());//To prevent Right Click
+
+
+
+            function myKeyPress(e) {
+                var keynum;
+                /*
+                 if (window.event) { // IE                    
+                 keynum = e.keyCode;
+                 } else if (e.which) { // Netscape/Firefox/Opera                   
+                 keynum = e.which;
+                 }
+                 */
+                /* In this example, we use a cross-browser solution, 
+                 * because the keyCode property does not work on the onkeypress event in Firefox. 
+                 * However, the which property does.
+                 Explanation of the first line in the function below: 
+                 if the browser supports event.which, then use event.which, otherwise use event.keyCode */
+                var keynum = e.which || e.keyCode;
+
+                //alert(String.fromCharCode(keynum));//String Value
+                alert("UniCode is: " + keynum);//Uni Code
+            }
+        </script>
+    </body>
+
+</html>

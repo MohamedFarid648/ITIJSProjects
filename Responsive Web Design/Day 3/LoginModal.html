@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Website</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="bootstrap4/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="iconFonts/glypicons/font.css" rel="stylesheet" type="text/css"/>
+        <link href="iconFonts/facss/fontawesome-all.css" rel="stylesheet" type="text/css"/>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="container-fluid ">
+            <div class="row mt-5">
+                <!-- <div class="col-12 col-md-4 mt-5 offset-4 text-white text-center">
+                -->
+                <div class="col-12 text-white text-center">  
+                    <button class="btn btn-info" data-toggle="modal" data-target="#MyLoginForm">Login Form</button>
+                </div>
+      
+                <!-- </div>-->
+            </div>
+                      <div class="modal" id="MyLoginForm" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <!-- Header-->
+                            <div class="modal-header">
+                                <h5 class="modal-title">Login</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <!--Content-->
+                            <div class="modal-body">
+                                <form action="page2.html">
+
+                                    <fieldset>
+                                        <legend>Login</legend>
+                                        <label for="UName">User Name</label>
+                                        <input type="text" id="UName" placeholder="Enter Your  Name Here" name="UName"/>
+                                        <br/>
+                                        <label for="UPass">Password</label>
+                                        <input type="password" id="UPass" placeholder="Enter Your Password Here" name="UPass"/>
+                                        <br/>
+                                        <label for="ULocation">Select Your Location</label>
+                                        <select name="ULocation">
+                                            <optgroup label="Africa">
+                                                <option>Egypt</option>
+                                                <option>Sudan</option>
+                                                <option>Nambia</option>
+                                            </optgroup>
+
+                                            <optgroup label="Europe">
+                                                <option>Deutch</option>
+                                                <option>France</option>
+                                                <option>England</option>
+                                            </optgroup>
+
+                                            <optgroup label="NorthAmerica" disabled="disabled">
+                                                <option>America</option>
+                                                <option>Mexico</option>
+                                            </optgroup>
+
+                                        </select>
+
+                                        <br/>
+                                        <input type="checkbox" name="rememberMe" id="rememberMe" accesskey="m" value="RememberMe"/>Remember <u>M</u>e
+                                        <br/><br/>
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                            <!--Footer-->
+                            <div class="modal-footer">
+                                <button type="button" id="btnLoginId" class="btn btn-primary">Login</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/popper.js" type="text/javascript"></script>
+        <script src="bootstrap4/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/script.js" type="text/javascript"></script>
+
+    </body>
+</html>

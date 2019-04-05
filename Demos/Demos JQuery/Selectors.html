@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		.highlight {
+			background-color: yellow;
+
+
+
+		}
+
+		.red {
+			color: red;
+		}
+	</style>
+	<title>Untitled Document</title>
+
+	<script src="./scripts/jQuery-M.js"></script>
+	<script>
+		$(document).ready(function() {
+			//
+			//$("ul li:eq(1)").css("color", "red");
+			$("ul li").filter(":eq(1),:eq(2)").css("color", "red");
+
+			$("ul li").eq(0).html("item changed").css("background-color", "yellow").css("color", "blue");
+
+
+			$("#b1").click(function() {
+
+				$("img").attr("src", "./images/10.jpg");
+				/*
+								if ($("h1").hasClass("highlight"))
+									$("h1").removeClass("highlight");
+								else
+									$("h1").addClass("highlight");
+				*/
+				$("h1").toggleClass("highlight")
+				//$("h1").addClass("highlight").addClass("red");
+
+
+			});
+
+
+			$("input[type='button']").click(function() {
+
+				$("#txt1").val("this is apdated text field")
+
+
+
+			});
+
+
+
+		});
+	</script>
+
+</head>
+
+<body>
+	<h1>jQuery Lecture</h1>
+	<h2>Demo#1</h2>
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	<ul>
+		<li>item#1</li>
+		<li>item#2</li>
+		<li>item#3</li>
+		<li>item#4</li>
+	</ul>
+	<button id="b1">addClass</button>
+	<br>
+	<input type="text" value="enter name" id="txt1">
+	<input type="button" value="click">
+
+	<img src="./images/1.jpg">
+
+
+</body>
+
+</html>

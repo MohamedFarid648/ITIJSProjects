@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+
+
+            var myString;
+
+            var check;
+
+
+            do {
+                myString = prompt("Enter any string (Palindrome)");
+
+            } while (myString == null || myString == "");
+            var lastIndex = myString.length - 1;
+
+            for (i = 0; i < (myString.length / 2); i++) {//&&check
+                /*myString.length/2 ,:noon
+                 
+                 
+                 check n with n
+                 o with o
+                 then don't complete the loop
+                 
+                 
+                 */
+
+                if (myString.charAt(i) == myString.charAt(lastIndex))
+                    check = true;
+                else
+                    check = false;
+                
+                lastIndex--;
+            }
+
+            if (check)
+                document.write("True Statement");
+            else
+                document.write("Flase Statement");
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

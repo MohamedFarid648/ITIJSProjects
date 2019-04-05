@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Linked List Constructor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+
+            function MyLinkedList(arr) {
+                this.myArray = arr;
+
+            }
+
+            MyLinkedList.prototype.pushElement = function (value) {
+                this.myArray.push(value);//set value at the end of array
+
+            }
+            MyLinkedList.prototype.popElement = function () {
+
+                return this.myArray.pop();////get the value from the end of array
+
+            }
+
+            MyLinkedList.prototype.displayContents = function () {
+
+                document.write("<br/><br>Your Array is :" + this.myArray.join(","));
+
+            }
+
+            MyLinkedList.prototype.insertIntoSpecifiecIndex = function (value, index) {
+
+                this.myArray[index] = value;
+
+            }
+
+            MyLinkedList.prototype.returnSpecificValue = function (index) {
+
+                return this.myArray[index];
+
+            }
+
+
+            var myLinkedList = new MyLinkedList([1, 2, 3, "kkk", "hhh",'hhhlllllllllllll']);
+            myLinkedList.displayContents();
+            //document.write("<br/><br>push:Hi I'm First");
+
+            myLinkedList.pushElement("Hi I'm third");
+            myLinkedList.displayContents();
+           // document.write("<br/><br>push:Hi I'm third");
+
+            myLinkedList.pushElement("Hi I'm Fourth");
+            myLinkedList.displayContents();
+            document.write("<br/><br>pop:" + myLinkedList.popElement());
+            myLinkedList.displayContents();
+            myLinkedList.insertIntoSpecifiecIndex('hdguhjdc',4);
+            document.write("<br/>try:"+myLinkedList.returnSpecificValue(4));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

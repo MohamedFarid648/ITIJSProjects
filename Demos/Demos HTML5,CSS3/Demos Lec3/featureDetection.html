@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Untitled Document</title>
+	<script src="./Modernizr/ConditionizrLib/Conditionizr.js"></script>
+	<script src="./Modernizr/ConditionizrLib/Conditionizr.Detects.js"></script>
+	<style>
+		h1 {
+			background-image: linear-gradient(red, yellow, green)
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1>heading #1</h1>
+	<script>
+		if (Modernizr.localStorage) {
+			//polyFill
+			conditionizr.load("./Modernizr/ConditionizrLib/local.js", ["chrome"])
+			conditionizr.load("./Modernizr/ConditionizrLib/localstorage.js", ["firefox"])
+
+
+		}
+
+
+		localStorage.setItem("usr_nm", "Ali");
+	</script>
+
+</body>
+</html>

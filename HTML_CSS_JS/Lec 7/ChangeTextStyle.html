@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Change Text Style</title>
+
+        <style type="text/css">
+            table#Text    {width:550px; border-collapse:collapse}
+            table#Text tr {vertical-align:top}
+            table#Text td {font-family:times new roman; font-size:11pt}
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+
+            /*   function changeFontFamily(thisObj) {
+             var paragraph = document.getElementById("PAR");
+             
+             var i;
+             var Font;
+             var FontLength;
+             var fontInputValue;
+             /* 
+             Font= document.getElementsByName("Font");
+             FontLength = Font.length;
+             for (i = 0; i < FontLength; i++) {
+             if (Font[i].checked) {
+             fontInputValue = Font[i].value;
+             console.log("fontInputValue:" + fontInputValue);
+             
+             }
+             
+             }*/
+            /* fontInputValue = thisObj.value;
+             paragraph.setAttribute("style", "font-family:" + fontInputValue);
+             
+             }*/
+
+            function changeStyle(thisObj, inputType) {
+                var paragraph = document.getElementById("PAR");
+
+                var inputValue;
+
+                inputValue = thisObj.value;
+                //paragraph.setAttribute("style", "font-family:" + inputValue);
+                //setAttribute:every time will remove old value from style and set another value
+
+                if (inputType == "font-family")
+                    paragraph.style.fontFamily = inputValue;
+
+                else if (inputType == "text-align")
+                    paragraph.style.textAlign = inputValue;
+                else if (inputType == "line-height")
+                    paragraph.style.lineHeight = inputValue;
+                else if (inputType == "letter-spacing")
+                    paragraph.style.letterSpacing = inputValue;
+                else if (inputType == "text-indent")
+                    paragraph.style.textIndent = inputValue;
+                else if (inputType == "text-transform")
+                    paragraph.style.textTransform = inputValue;
+                else if (inputType == "text-decoration")
+                    paragraph.style.textDecoration = inputValue;
+                else if (inputType == "border-style")
+                    paragraph.style.borderStyle = inputValue;
+                else if (inputType == "border-color") 
+                    paragraph.style.borderColor = inputValue;
+
+
+                }
+
+
+
+
+        </script>
+    </head>
+    <body>
+
+        <p id="PAR" style="
+
+           /*text-indent:
+             text-transform:  
+             border-style
+             border-color
+           */  border-color: blue;
+
+           font-family:times new roman; font-size:11pt; width:550px; border:solid 1; padding:10; text-align:left">
+            Here is a paragraph of text that has various alignment characteristics that can be changed 
+            dynamically. Click the radio buttons below to view combinations of text style settings.
+        </p>
+
+
+
+        <table id="Text" border="1">
+            <tr>
+                <td>
+                    <b>fontFamily</b><br/>
+                    <input type="radio" name="Font" onclick="changeStyle(this, 'font-family')" value="arial" checked/>arial<br/>
+                    <input type="radio" name="Font" onclick="changeStyle(this, 'font-family')" value="courier"/>courier<br/>
+                    <input type="radio" name="Font" onclick="changeStyle(this, 'font-family')" value="georgia"/>georgia<br/>
+                    <input type="radio" name="Font" onclick="changeStyle(this, 'font-family')" value="impact"/>impact<br/>
+                    <input type="radio" name="Font" onclick="changeStyle(this, 'font-family')" value="times new roman"/>times new roman<br/>
+                    <input type="radio" name="Font" onclick="changeStyle(this, 'font-family')" value="verdana"/>verdana<br/>
+                </td>	
+
+                <td>
+                    <b>textAlign</b><br>
+                    <input type="radio" name="Align" value="left" onclick="changeStyle(this, 'text-align')" checked/>left<br/>
+                    <input type="radio" name="Align" value="center" onclick="changeStyle(this, 'text-align')"/>center<br/>
+                    <input type="radio" name="Align"  value="right" onclick="changeStyle(this, 'text-align')"/>right<br/>
+                    <input type="radio" name="Align" value="justify" onclick="changeStyle(this, 'text-align')"/>justify<br/>
+                </td>
+                <td>
+                    <b>lineHeight</b><br>
+                    <input type="radio" name="Height" value="normal" onclick="changeStyle(this, 'line-height')" checked/>normal<br/>
+                    <input type="radio" name="Height" value="10px" onclick="changeStyle(this, 'line-height')"/>10px<br/>
+                    <input type="radio" name="Height" value="15px" onclick="changeStyle(this, 'line-height')"/>15px<br/>
+                    <input type="radio" name="Height" value="1.5" onclick="changeStyle(this, 'line-height')"/>1.5<br/>
+                </td>	
+                <td>
+                    <b>letterSpacing</b><br>
+                    <input type="radio" name="Lspace" value="normal" onclick="changeStyle(this, 'letter-spacing')" checked/>normal<br/>
+                    <input type="radio" name="Lspace" value="-1px" onclick="changeStyle(this, 'letter-spacing')"/>-1px<br/>
+                    <input type="radio" name="Lspace" value="2px" onclick="changeStyle(this, 'letter-spacing')"/>2px<br/>
+                    <input type="radio" name="Lspace" value="3px" onclick="changeStyle(this, 'letter-spacing')"/>3px<br/>
+                </td>
+                <td>
+                    <b>textIndent</b><br>
+                    <input type="radio" name="Indent" value="0px" onclick="changeStyle(this, 'text-indent')" checked/>0px<br/>
+                    <input type="radio" name="Indent" value="5px" onclick="changeStyle(this, 'text-indent')"/>5px<br/>
+                    <input type="radio" name="Indent" value="15px" onclick="changeStyle(this, 'text-indent')"/>15px<br/>
+                    <input type="radio" name="Indent" value="25px" onclick="changeStyle(this, 'text-indent')"/>25px<br/>
+                </td>	
+                <td>
+                    <b>textTransform</b><br>
+                    <input type="radio" name="Transform" value="none" onclick="changeStyle(this, 'text-transform')" checked/>none<br/>
+                    <input type="radio" name="Transform" value="capitalize" onclick="changeStyle(this, 'text-transform')"/>capitalize<br/>
+                    <input type="radio" name="Transform" value="uppercase" onclick="changeStyle(this, 'text-transform')"/>uppercase<br/>
+                    <input type="radio" name="Transform" value="lowercase" onclick="changeStyle(this, 'text-transform')"/>lowercase<br/>
+                </td>
+                <td>
+                    <b>textDecoration</b><br>
+                    <input type="radio" name="Decorate" value="none" onclick="changeStyle(this, 'text-decoration')" checked/>none<br/>
+                    <input type="radio" name="Decorate" value="linethrough" onclick="changeStyle(this, 'text-decoration')"/>line-through<br/>
+                    <input type="radio" name="Decorate" value="overline" onclick="changeStyle(this, 'text-decoration')"/>overline<br/>
+                    <input type="radio" name="Decorate" value="underline" onclick="changeStyle(this, 'text-decoration')"/>underline<br/>
+                </td>
+                <td>
+                    <b>textBorder</b><br>
+                    <input type="radio" name="Border" value="none" onclick="changeStyle(this, 'border-style')" checked/>none<br/>
+                    <input type="radio" name="Border" value="dotted" onclick="changeStyle(this, 'border-style')"/>dotted<br/>
+                    <input type="radio" name="Border" value="double" onclick="changeStyle(this, 'border-style')"/>double<br/>
+                    <input type="radio" name="Border" value="groove" onclick="changeStyle(this, 'border-style')"/>groove<br/>
+                    <input type="radio" name="Border" value="dashed" onclick="changeStyle(this, 'border-style')"/>dashed<br/>
+                    <input type="radio" name="Border" value="inset" onclick="changeStyle(this, 'border-style')"/>insert<br/>
+                    <input type="radio" name="Border" value="solid" onclick="changeStyle(this, 'border-style')"/>solid<br/>
+                    <input type="radio" name="Border" value="outset" onclick="changeStyle(this, 'border-style')"/>outset<br/>
+                    <input type="radio" name="Border" value="ridge" onclick="changeStyle(this, 'border-style')"/>ridge<br/>
+                </td>
+                <td>
+                    <b>Bordercolor</b><br>
+                    <input type="radio" name="BorderColor" value="none" onclick="changeStyle(this, 'border-color')" checked/>none<br/>
+                    <input type="radio" name="BorderColor" value="pink" onclick="changeStyle(this, 'border-color')" />pink<br/>
+                    <input type="radio" name="BorderColor" value="red" onclick="changeStyle(this, 'border-color')" />red<br/>
+                    <input type="radio" name="BorderColor"  value="green" onclick="changeStyle(this, 'border-color')" />green<br/>
+                    <input type="radio" name="BorderColor" value="blue" onclick="changeStyle(this, 'border-color')" />blue<br/>
+                    <input type="radio" name="BorderColor" value="yellow" onclick="changeStyle(this, 'border-color')" />yellow<br/>
+                    <input type="radio" name="BorderColor" value="purple" onclick="changeStyle(this, 'border-color')" />purple<br/>
+                </td>
+
+        </table>    </body>
+</html>

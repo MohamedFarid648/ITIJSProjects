@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+
+            var x, sum = 0;
+            do {
+                x = prompt("Enter your value please ,0 to exit :");
+
+                x = parseInt(x);//x will be  NaN if old value like: a45,null
+
+                if (x) {//if x is any number except zero(zero,null,NaN is false)
+                    sum += x;
+                }
+            } while (x != 0);
+            document.write("<br/><br>Sum is:" + sum);
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

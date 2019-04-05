@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>My First Name Letter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div style="text-align: center">
+            <canvas width="500" height="900" id="LetterCanvas" 
+                    style="//border: 1px solid black;
+                    position:relative;
+                    top:100px">
+                There is a canvas here but your browser doesn't support
+            </canvas>
+        </div>
+
+        <script>
+
+            var myConvas = document.getElementById("LetterCanvas");
+            var myContext = myConvas.getContext("2d");
+            myContext.beginPath();
+            myContext.arc(200, 200, 200, 0, 2 * Math.PI);
+            myContext.fillStyle = "rgb(0,0,200)";
+            myContext.stroke();
+            myContext.fill();
+            myContext.beginPath();
+            myContext.arc(200, 200, 150, 0, 2 * Math.PI);//);
+            myContext.fillStyle = "rgb(0,0,250)";
+            myContext.stroke();
+            myContext.fill();
+
+            var myFirstLetter = "M";
+            myContext.font = "80pt Georiga";
+            myContext.strokeStyle = "white";
+            myContext.fillStyle = "white";
+
+            myContext.shadowOffsetX = 5;
+            myContext.shadowOffsetY = 5;
+            myContext.shadowBlur = 5;
+            myContext.shadowColor = "white";
+
+            myContext.fillText(myFirstLetter, 150, 250);
+            // myContext.strokeText(myFirstLetter, 250, 200);
+        </script>
+        <script>
+
+            //createRadialGradient(StartX,StartY,StartRadius,EndX,EndY,EndRadius)
+            var grd = myContext.createRadialGradient(200, 600, 150, 200, 600, 200);
+            ////
+            //Good Picture ^_^
+            grd.addColorStop(0, "rgb(0,0,255)");
+            grd.addColorStop(0.5, "rgb(0,0,150)");
+            grd.addColorStop(0.7, "rgb(0,0,100)");
+            grd.addColorStop(1, "white");
+
+            /*  grd.addColorStop(0, "white");
+             grd.addColorStop(0.5, "rgb(0,0,150)");
+             grd.addColorStop(0.7, "rgb(0,0,100)");
+             grd.addColorStop(1, "rgb(0,0,255)");
+             */
+            myContext.fillStyle = grd;
+            myContext.beginPath();
+            myContext.arc(200, 600, 200, 0, 2 * Math.PI);
+            myContext.fill();
+
+            var myFirstLetter = "M";
+            myContext.font = "80pt Georiga";
+            myContext.strokeStyle = "white";
+            myContext.fillStyle = "white";
+
+            myContext.shadowOffsetX = 5;
+            myContext.shadowOffsetY = 5;
+            myContext.shadowBlur = 5;
+            myContext.shadowColor = "white";
+
+            myContext.fillText(myFirstLetter, 150, 630);
+            // myContext.strokeText(myFirstLetter, 250, 200);
+
+
+        </script>
+    </body>
+</html>

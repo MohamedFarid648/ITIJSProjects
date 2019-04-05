@@ -1,0 +1,20 @@
+slide {
+  height:350px;
+}
+.img-fluid
+{
+  width:180px;
+  height: 150px;
+  /* position: relative; */
+}
+
+.card-title
+{
+  color:#6d7fc1;
+
+}
+
+.panel-heading
+{
+  font-size:20px;
+}

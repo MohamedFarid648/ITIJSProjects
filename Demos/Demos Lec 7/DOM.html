@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head>
+	<title>Untitled Document</title>
+
+</head>
+
+<body bgcolor="pink">
+	<h1 style="">demo for DOM</h1>
+	<p id="myP"> simple text</p>
+	<input type="button" onclick="addElem()" value="add">
+	<script>
+		
+		function addElem(){
+			
+			var italicElem=document.createElement("i");
+			var txt=document.createTextNode("this is italic");
+			
+		italicElem.appendChild(txt);	document.getElementById("myP").appendChild(italicElem);
+			
+		var clone=document.getElementById("myP").cloneNode(true);
+		//var arr=
+		
+		
+		document.body.insertBefore(clone,document.getElementsByTagName("h1")[0])
+		alert("clear")
+		document.body.innerHTML="";
+		
+		
+		}
+	
+		document.getElementsByTagName("h1")[0].setAttribute("style","text-align:center;color:red")
+		
+		
+		document.getElementsByTagName("h1")[0].style.textAlign="right";
+		document.getElementsByTagName("h1")[0].style.color="blue";
+		console.log(document.body.firstChild.nextSibling.nodeName);
+		alert("change");
+		document.body.bgColor="green";
+		
+	document.getElementById("myP").setAttribute("align","center");
+	
+	
+	console.log(document.body.firstChild.nextSibling.firstChild.nodeValue);
+	</script></body>
+	
+</html>

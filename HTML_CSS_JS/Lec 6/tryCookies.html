@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Register Cookie</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="GeneralCookiesFile.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <div>
+
+            <form method="GET" action="WelcomeCookie.html">
+
+                <label>Enter Your Name:</label><input type="text" id="UserName" name="UserName"/><br/><br/>
+                <label>Enter Your Age</label><input type="number" id="UserAge" name="UserAge"/><br/><br/>
+                <label>Select Your Gender:</label>
+
+                <input type="radio" id="UserGender" name="UserGender" value="Male"/><img src="1.jpg" alt="Male">
+                <input type="radio" id="UserGender" name="UserGender" value="Female"/><img src="2.jpg" alt="Female">
+
+                <br/><br/>
+                <label>Select Your Favorite Color:</label>
+                <select id="UserFavoriteColor" name="UserFavoriteColor">
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>
+                <br/><br/>
+                <button id="registerBTN" onclick="registerClick()">Register</button>
+            </form>
+
+        </div>
+        <script type="text/javascript">
+
+            var registerButton = document.getElementById("registerBTN");
+            //    document.getElementById("registerBTN").addEventListener("click", registerClick,false);
+            var counter, i;
+            function registerClick() {//registerClick(eventObject, thisObject) {
+
+                var userName = document.getElementById("UserName").value;
+                var userAge = document.getElementById("UserAge").value;
+                var userGender;
+                var userGenderArray = document.getElementsByTagName("UserGender");
+                for (counter = 0; counter < userGenderArray.length; counter++) {
+
+                    if (userGenderArray[counter].checked)
+                        userGender = userGenderArray[counter].value;
+                }
+
+                var userFavoriteColorArr = document.getElementById("UserFavoriteColor");
+                var userFavoriteColor;
+                var selectedLength = userFavoriteColorArr.length;
+                for (counter = 0; counter < selectedLength; counter++)
+                {
+                    if (userFavoriteColorArr.options[counter].selected)
+                        userFavoriteColor = userFavoriteColorArr.options[counter].text;
+                }
+                var counter = 0;
+                createCookie("userName", userName);
+                createCookie("userAge", userAge);
+                createCookie("userGender", userGender);
+                createCookie("userFavoriteColor", userFavoriteColor);
+                createCookie("counter", counter);
+
+                //  console.log("Cookies:" + document.cookie);
+            }
+        </script>
+    </body>
+</html>

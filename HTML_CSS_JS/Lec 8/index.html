@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Home Lec8</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+
+            <a href="ReturnReversingArray_OverLoading.html" target="_blank">ReturnReversing Array OverLoading</a><br/><br/>
+            <a href="RectangleConstructor.html" target="_blank">Rectangle Constructor</a><br/><br/>
+            <a href="LinkedListConstructor.html" target="_blank">Linked List Constructor</a><br/><br/>
+            <a href="GetSetGenerator.html" target="_blank">Get Set Generator</a><br/><br/>
+
+        </div>
+        <script>
+//1.Factory Function
+//Custom Object using factory pattern
+
+            var Employee = function (n, id) {
+                return {name: n, ID: id};
+            }
+            var emp1 = Employee("kk", 5);
+            console.log("Emp.ID:" + emp1.ID);//5
+            console.log("Emp.Name:" + emp1.name);//"kk"
+
+
+            // 2.Function Constructor
+//Custom Object using Function Constructor pattern
+
+            function Employee2(n, id) {
+                this.name = n;
+                this.ID = id;
+            }
+            var emp2 = new Employee2("kk", 5);
+            console.log("Emp.ID:" + emp2.ID);//5
+            console.log("Emp.Name:" + emp2.name);//"kk"
+
+
+        </script>
+    </body>
+</html>

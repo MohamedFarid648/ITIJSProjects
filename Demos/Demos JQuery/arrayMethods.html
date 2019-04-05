@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Untitled Document</title>
+	<script src="./scripts/jQuery-M.js"></script>
+	<script>
+		/*
+						var arr = [1, 2, 3, 4, 5, 6];
+
+
+						console.log($.map(arr, function(e, i) {
+							//arguments[0]= arr[i]
+							//arguments[1]=i
+							return e * 2;
+
+
+						}));*/
+
+		$(document).ready(function() {
+			$("ul li").each(function(idx, elem) {
+				//elem.innerHTML += ":" + idx;
+				//var x = $(this).html(); //get
+				$(elem).html($(this).html() + ":" + idx); //set
+
+
+			});
+
+
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<ul>
+		<li>item#1</li>
+		<li>item#2</li>
+		<li>item#3</li>
+		<li>item#4</li>
+		<li>item#5</li>
+		<li>item#6</li>
+		<li>item#7</li>
+
+	</ul>
+
+</body>
+</html>

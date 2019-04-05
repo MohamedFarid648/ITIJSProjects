@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Animation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+
+        <div style="text-align: center">
+            <canvas width="500" height="400" id="LetterCanvas" 
+                    style="border: 1px solid black;
+                    position:relative;
+                    top:30px">
+                There is a canvas here but your browser doesn't support
+            </canvas>
+        </div>
+
+        <script>
+
+            var myConvas = document.getElementById("LetterCanvas");
+            var myContext = myConvas.getContext("2d");
+            myContext.beginPath();
+            var x, y;
+            x = 0, y = 0;
+            myContext.moveTo(x, y);
+            myContext.lineWidth = 7;
+            myContext.strokeStyle = "rgb(209,1,21)";
+            function draw2Points() {
+
+                myContext.lineTo(x += 19, y += 15);
+                console.log("x=" + x);
+                console.log("y=" + y);
+                myContext.stroke();
+                if (x >= 520) {
+                    clearInterval(timer);
+                    alert("Animation End ^_^")
+                }
+
+            }
+
+            var timer = setInterval(draw2Points, 100);
+
+        </script>
+    </body>
+</html>

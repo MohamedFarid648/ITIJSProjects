@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Untitled Document</title>
+	<style>
+		canvas {
+			border: 2px dotted blue;
+
+		}
+	</style>
+</head>
+
+<body>
+	<canvas width="676" height="315" id="canvas"></canvas>
+	<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+
+		ctx.beginPath();
+		ctx.moveTo(100, 100);
+		ctx.lineTo(100, 300);
+		ctx.lineTo(150, 300);
+		ctx.lineTo(150, 155);
+		ctx.lineTo(205, 155);
+		ctx.lineTo(205, 100);
+		ctx.stroke();
+
+		ctx.save()
+
+		ctx.rotate(15 * Math.PI / 180)
+
+		ctx.beginPath();
+		ctx.moveTo(100, 100);
+		ctx.lineTo(100, 300);
+		ctx.lineTo(150, 300);
+		ctx.lineTo(150, 155);
+		ctx.lineTo(205, 155);
+		ctx.lineTo(205, 100);
+
+
+		ctx.stroke();
+
+
+		ctx.restore();
+		ctx.scale(1,2)
+		ctx.save();
+		ctx.translate(200, 200);
+		var img = new Image();
+		img.src = "1.jpg";
+		img.onload = function() {
+
+			ctx.drawImage(img, 0, 0, 150, 100)
+
+
+		}
+		ctx.restore()
+	</script>
+
+</body>
+</html>

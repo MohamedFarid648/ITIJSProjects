@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Alvin Filter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /*
+            filter: none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia() | url();
+            */
+            img{
+                
+              //filter:opacity(1);
+                
+                display:block;
+               // float: left;
+                width: 500px;
+                height: 400px;
+                    
+                    
+            }
+        </style>
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <div>
+            
+            <img src="../images/7.jpg" alt=""/>
+            
+            <br>
+            <button id="saturate" 
+                    onclick="document.images[0].style.filter='saturate()'; " >Saturate</button>
+                        <button id="opacity" onclick="document.images[0].style.filter='opacity(.3)'; "  >opacity</button>
+                        <button id="invert"  onclick="document.images[0].style.filter='invert()'; " >invert</button>
+                        <button id="sepia"  onclick="document.images[0].style.filter='sepia()'; ">sepia</button>
+                        <button id="grayscale"  onclick="document.images[0].style.filter='grayscale()'; " >grayscale</button>
+
+        </div>
+    </body>
+</html>

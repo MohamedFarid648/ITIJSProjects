@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Untitled Document</title>
+
+    </head>
+
+    <body>
+        <input type="button" value="range" onclick="12.345.toFixed(102)">
+        <input type="button" value="syntax" onclick="alertx);">
+        <input type="button" value="ref" onclick="funn();">
+
+        <script>
+            onerror = handelError;//Best Solution
+            /*try{
+             var e = new Error("this is an error");
+             console.log(e.name);
+             console.log(e.message);
+             
+             //throw e;
+             var x = parseInt(prompt("enter your guess value", "10"));
+             
+             if (x < 0)
+             throw "err1"
+             else if (x > 10)
+             throw e;
+             
+             console.log("end of try");
+             }
+             catch(er){
+             if(er=="err1")
+             console.log("error1 occur");
+             if (er instanceof Error)
+             console.log("Error Object was created");
+             console.log(obj());
+             console.log("end of catch");
+             
+             }
+             finally{
+             console.log("finall statement");
+             }
+             */
+            console.log("last statement exec");
+
+            function handelError(msg, url, l, col, err) {
+
+                if (err instanceof SyntaxError)
+                    msg = "Syntax Error";
+                else if (err instanceof  RangeError)
+                    msg = "Range Error";
+                else if (err instanceof  Error)
+                    msg = "General Error";
+
+
+
+                console.log("msg:"+msg);
+                console.log("URL:"+url);
+                console.log("Line:"+l);
+
+
+
+                return true;//don't display browser messag,display my message
+            }
+
+        </script>
+
+    </body>
+</html>

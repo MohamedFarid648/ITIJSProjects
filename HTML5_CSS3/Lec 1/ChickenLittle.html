@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ChickenLittle</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            
+            img{
+                
+                transition: opacity 2s linear;
+            }
+            img:hover{
+                
+                opacity:0; 
+                
+            }
+            
+            
+            
+        </style>
+    </head>
+    <body>
+        <div>
+
+            <img src="../images/3.jpeg" alt="" width="250" height="250" />
+
+        </div>
+
+        <script>
+            /*function fade(element) {
+                var op = 1;  // initial opacity
+                var timer = setInterval(function () {
+                    if (op <= 0.1) {
+                        clearInterval(timer);
+                        element.style.display = 'none';
+                    }
+                    element.style.opacity = op;
+                    element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                    op -= op * 0.1;
+                }, 50);
+            }
+            function unfade(element) {
+                var op = 0.1;  // initial opacity
+                element.style.display = 'block';
+                var timer = setInterval(function () {
+                    if (op >= 1) {
+                        clearInterval(timer);
+                    }
+                    element.style.opacity = op;
+                    element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                    op += op * 0.1;
+                }, 10);
+            }
+
+            // document.images[0].addEventListener("click", fade(document.images[0]));
+            document.images[0].addEventListener("mouseover", function () {
+
+                var myOpacity = 1;
+                var timer = setInterval(function () {
+
+                    if (myOpacity <= 0.1) {
+                        clearInterval(timer);
+                        document.images[0].style.display = 'none';// can't see this here this
+
+                    }
+
+                    document.images[0].style.opacity = myOpacity;
+                    document.images[0].style.filter = 'alpha(opacity=' + myOpacity * 100 + ")";//???
+                    myOpacity -= myOpacity * 0.1;
+                }, 100);
+                //event.stopPropagation();//to stop call parent
+
+            });
+            document.images[0].addEventListener("mouseout", function () {
+
+                var myOpacity = 0.1;
+                var timer = setInterval(function () {
+
+                    if (myOpacity >= 1) {
+                        clearInterval(timer);
+                        document.images[0].style.display = 'block';// can't see this here this
+
+                    }
+
+                    document.images[0].style.opacity = myOpacity;
+                    document.images[0].style.filter = 'alpha(opacity=' + myOpacity * 100 + ")";//???
+                    myOpacity += myOpacity * 0.1;
+                },100);
+
+            });*/
+
+
+        </script>
+    </body>
+</html>

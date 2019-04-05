@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div class="centerAll">
+
+
+            <form action="page2.html">
+
+                <fieldset>
+                    <legend>Login</legend>
+                    <label for="UName">User Name</label>
+                    <input type="text" id="UName" placeholder="Enter Your User Name Here" name="UName"/>
+                    <br/>
+                    <label for="UPass">PassWord</label>
+                    <input type="password" id="UPass" name="UPass"/>
+                    <br/>
+                    <label for="ULocation">Select Your Location</label>
+                    <select name="ULocation">
+                        <optgroup label="Africa">
+                            <option>Egypt</option>
+                            <option>Sudan</option>
+                            <option>Nambia</option>
+                        </optgroup>
+
+                        <optgroup label="Europe">
+                            <option>Egypt</option>
+                            <option>Sudan</option>
+                            <option>Nambia</option>
+                        </optgroup>
+
+                        <optgroup label="NorthAmerica" disabled="disabled">
+                            <option>Egypt</option>
+                            <option>Sudan</option>
+                            <option>Nambia</option>
+                        </optgroup>
+
+                    </select>
+
+                    <br/>
+                    <input type="checkbox" name="rememberMe" accesskey="m" value="RememberMe"/>Remember <u>M</u>e
+                    <br/><br/>
+                    <input type="submit" value="Login"/>
+                </fieldset>
+            </form>
+
+
+        </div>
+
+
+    </body>
+</html>

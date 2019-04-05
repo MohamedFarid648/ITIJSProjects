@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Untitled Document</title>
+	<script src="./scripts/jQuery-M.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			var elem = $("<img src='./images/1.jpg'>");
+
+			$("input[type='button']").on("click", function() {
+
+
+				//$().appendTo($("div"))
+				$("div").prepend($("span").eq(0))
+
+			});
+			$("input[type='button']").on("click", hdlrbtn)
+
+			function hdlrbtn() {
+
+
+				$("div").append($("<img src='./images/1.jpg'>"));
+
+
+			}
+
+		});
+	</script>
+
+</head>
+
+<body>
+	<span>SPAN TEXT</span>
+	<hr>
+	<div>
+		simple text
+		<br>
+		<input type="button" value="click">
+		<br>
+	</div>
+
+</body>
+</html>

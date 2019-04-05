@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Nemo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            img{
+                  width:0px;
+                    height:0px;
+            }
+            @keyframes NemoAnimation{
+
+                from{
+
+                    width:0px;
+                    height:0px;
+                }
+                to{
+
+                    width:100%;
+                    height:100%;
+                }
+
+            }
+
+           img{
+                animation-name: NemoAnimation;
+                animation-delay: 0.5s;
+                animation-duration: 5s;//مدته
+                animation-direction: normal;  
+                animation-iteration-count: 1;
+                animation-timing-function: ease-out;
+                animation-fill-mode: forwards;//go and don't come back'
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+            <img src="../images/nemo.jpg" alt=""  />
+
+        <script>
+
+        </script>
+    </body>
+</html>

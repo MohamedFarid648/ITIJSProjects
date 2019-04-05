@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Untitled Document</title>
+	<script>
+		function execTime() {
+			alert("timer");
+
+		}
+
+		var timerId;
+		//var count;
+		function startTimer() {
+			//count
+			alert("timer");
+			timerId = setTimeout(startTimer, 3000)
+
+
+			//timerId = setTimeout(execTime, 3000)
+			//timerId = setInterval(execTime, 3000)
+			//timerId = setInterval("execTime()", 3000)
+			//setInterval(callbackfn,ms)
+
+
+		}
+
+		function clrInt() {
+			window.clearTimeout(timerId);
+
+		}
+
+	</script>
+
+</head>
+
+<body>
+	<input type="button" value="start" onclick="startTimer()" />
+	<input type="button" value="stop" onclick="clrInt()" />
+
+</body>
+
+</html>

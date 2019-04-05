@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Tiger Moving</title>
+        <style>
+            img {
+
+                position: absolute;
+                left: 440px;
+            }
+        </style>
+    </head>
+
+    <body>
+	<div id="myDiv" width="900" height="900">
+	
+	
+        <img src="../images/tiger.gif" onclick="SetIntervalMoveTiger()">
+</div>
+        <script>
+			document.addEventListener("click",function(e){
+ console.log("x:"+e.clientX); 
+  console.log("y:"+e.clientY); 
+  var buttun="<button style='position:absolute;top:"
+  +e.clientY+"px;left:"+e.clientX+"px;'>button</button>";
+document.getElementById("myDiv").innerHTML+=buttun;
+});
+
+
+            var t, x;
+            function moveTiger() {
+
+                x = parseInt(getComputedStyle(document.images[0]).left);
+                console.log("x="+x);
+                x -= 2;
+                document.images[0].style.left = x + "px";
+                if (x == 0)
+                    clearInterval(t);
+            }
+            function SetIntervalMoveTiger() {
+                t = setInterval(moveTiger, 50);
+
+                
+
+            }
+
+
+  </script>
+    </body>
+
+</html>

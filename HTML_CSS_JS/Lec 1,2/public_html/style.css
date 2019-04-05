@@ -1,0 +1,92 @@
+/*1em =12pt=16px=100%*/
+body{
+	/*-webkit-transaction:width 50px,height 30px;*/
+
+    
+    background-color: pink;
+}
+
+.centerClass{
+    
+    text-align: center;
+}
+.centerAll{
+    margin: auto;/*Make Table Center*/
+    margin-top: 200px;
+    margin-left: 400px;
+    width: 50%;
+    height: 50%;
+    /*text-align: center;*/
+}
+legend{
+    color: red;
+	
+	font-size: 20pt;font-family:fantasy;font-weight: bold;/*pt(point) for font ,px(pixel) for images,...*/
+    
+}
+table{
+	/*border-width: top right bottom left;*/
+	
+	/*border: style width color;*/
+	border: inset 15px hotpink;
+	/*border-width:15px ;
+	/*border-style: inset;/*3D from left and top*/
+	/*border-style: inset;/*3D from left and top*/
+
+	/*border-color: hotpink;*/
+	
+	/*border-radius:10px 50px 100px 200px;*/
+	/*
+	border-radius:topLeft topRight bottomRight bottomLeft;
+	border-style: outset;/**/
+	
+	/*border-left-style: outset;
+    border-top-style: outset;*/
+	/*
+	border-right-color: brown;
+	border-bottom-color: brown;
+	
+	border-left-color: crimson;
+	border-top-color: crimson;
+	
+	border-width: thick;
+	box-shadow: 10px 10px 10px brown;
+	*/
+	box-shadow: 10px 10px 10px ;
+	padding: 10px;
+	margin-bottom: 20px;
+
+	margin-top: -100px;
+} 
+td{
+	padding: 10px;
+	margin: 5px;
+	border-color: crimson
+}
+.change-font{
+	font-family: fantasy;
+}.change-font2{
+	font-family: cursive;
+}
+.change-size{
+	font-size: 10px;
+}.change-size2{
+	font-size: 20px;
+	font-weight: bold;
+}
+.change-color{color: red;}
+.alLeft{text-align: left;}
+.alRight{text-align: right;}
+
+
+
+.TryFont{
+	
+	/*font :  font-style fontstyle fontvariant fontweight font-size  linesize line-height fontheight font-family*/
+	
+	font-family: sans-serif;
+	
+	font-size: 15pt;/*PT for word 12pt is the normal font*/
+	
+	font-weight: bold;/*normal or any size */
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Shape Constructor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+
+            /*
+             2. Display the area and perimeter of an object created from using Rectangle Constructor
+             that has width and height properties and 2 extended methods for calculating area, 
+             perimeter . Override .toString() function to display a message declaring the width,
+             height, area and perimeter of the created object.
+             Create Class Property that counts numbers of created objects and Class method
+             to retrieve it. Make proper updates in your code to make Rectangle inherits 
+             from Shape Constructor, and Square inherits from Rectangle.
+             Don’t allow creation of any shape instance.
+             Try 3 different ways of inheritance.
+             Note: make your own interface.
+             */
+            function Shape(w, h) {
+            this.width = typeof w == undefined ? 4 : w; //private
+                    this.height = typeof h == undefined ? 5 : h; //private
+                    this.setWidth = function (w) {
+                    this.width = w;
+                    }
+            this.getWidth = function () {
+            return this.width;
+            }
+            this.setHeight = function (h) {
+            this.height = h;
+            }
+            this.getHeight = function () {
+            return this.height;
+            }
+
+            //Step 3 to make Abstract Class
+            if (this.constructor == Shape)//Shape.constructor)
+                    throw "You can't crate object from this Object"
+
+            }
+
+            function Rectangle(w, h) {
+
+                    window.Shape.call(this, w, h); //first step
+                    Rectangle.count++;
+                    this.calculateArea = function () {
+
+                    return this.width * this.height;
+                    }
+
+            this.calculatePerimeter = function () {
+
+            var p = this.width + this.height;
+                    return p * 2;
+            }
+            }
+            
+           /* var s=new Shape();
+s.constructor;*/
+                    //Rectangle.prototype = Shape.prototype;//Second Step(Bad way)//Rectangle.prototype refers to Shape Prototype
+                    //Rectangle.prototype=new Person();//Second step(Bad too)//just solve properties and methods problem
+                    Rectangle.prototype = Object.create(Shape.prototype); //Second Step(Good way)//Rectangle.prototype refers to new Prototype
+                    Rectangle.prototype.constructor = Rectangle; //To return Rectangle object not Shape object
+                    Rectangle.count = 0; //Class member
+                    Rectangle.getCount = function () {
+
+
+                    return Rectangle.count; //this.count;
+                    }
+                    Rectangle.prototype.toString = function () {
+
+            document.write("<br/><br/>width:" + this.getWidth());
+                    document.write("<br/><br/>Height:" + this.getHeight());
+                    document.write("<br/><br/>Area:" + this.calculateArea());
+                    document.write("<br/><br/>Perimetr:" + this.calculatePerimeter());
+            }
+
+                    var rect1 = new Rectangle(10, 20);
+                    var rect2 = new Rectangle(10, 20);
+                    var rect3 = new Rectangle(10, 20);
+                    document.write("<br/><br/>Calculate Area:" + rect1.calculateArea());
+                 
+                    //document.write("<br/><br/>Error :" + (rect1.height*rect1.width));
+
+                    document.write("<br/><br/>Calculate Perimeter:" + rect1.calculatePerimeter());
+                    document.write("<br/><br/>To String:");
+                    rect1.toString();
+                    document.write("<br/><br/>Count:" + Rectangle.getCount());
+                    // document.write("<br/><br/>Count:"+rect1.count);//undefined
+
+
+                            function Square(h){
+
+                                   Rectangle.call(this, h, h);//1
+                            
+                            }
+                          /*  Square.prototype = Object.create(Rectangle.prototype);//2
+                            Square.prototype.constructor = Square;//3
+                            Square s = new Square(4);
+                            document.write("<br/><br/>Calculate Area:" + s.calculateArea());
+                            document.write("<br/><br/>Calculate Perimeter:" + s.calculatePerimeter());
+*/
+
+        </script>
+    </body>
+
+
+</html>

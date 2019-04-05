@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Img</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div style="text-align: center">
+            <canvas width="700" height="400" id="LetterCanvas" 
+                    style="border: 1px solid black;
+                    position:relative;
+                    top:30px">
+
+                There is a canvas here but your browser doesn't support
+            </canvas>
+            <button id="downloadBtn">Download</button>
+        </div>
+        <script>
+            //myContext.translate(200, 200);
+
+            var myConvas = document.getElementById("LetterCanvas");
+            var myContext = myConvas.getContext("2d");
+            function drawImg1(myStr, imgNum) {
+
+                myContext.beginPath();
+                var myImg = new Image();
+                myImg.src = "images/" + imgNum + ".jpg";
+                myImg.onload = function () {
+
+                    myContext.drawImage(myImg, 0, 0, myConvas.width, myConvas.height);
+                    // myContext.drawImage(myImg, 140, 40, 230, 180, 0, 0, 250, 100);
+
+                    //drawImg(img,x,y,width,height);
+
+
+                    myContext.font = "50pt Georiga";
+                    myContext.strokeStyle = "white";
+                    myContext.fillStyle = "white";
+
+                    myContext.shadowOffsetX = 5;
+                    myContext.shadowOffsetY = 5;
+                    myContext.shadowBlur = 5;
+                    myContext.shadowColor = "red";
+
+                    myContext.fillText(myStr, 200, 100);
+                    myImg.onclick = function () {
+                        myImg.href = myConvas.toDataURL();
+                        myImg.download = "pic.jpg";
+                    }
+                }
+            }
+            var myStr1 = "Make your heart as A child heart :)"
+            var myStr2 = "Be a white flower ^_^";
+            var myStr3 = "Even if you don't have a leaf you still has a role here :)";
+            var myStr5 = "Enjoy Doing your Tasks..Enjoy  your life ^_^"
+            var myStr6="قصة القلوب ";
+            drawImg1(myStr6, 6);
+            var e = document.getElementById("downloadBtn");
+            e.onclick = function () {
+                e.href = myConvas.toDataURL();
+                e.download = "pic.jpg";
+            }
+
+
+
+        </script>
+    </body>
+</html>

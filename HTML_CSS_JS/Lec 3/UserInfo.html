@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+
+
+
+            var NameRegExp = /^[a-zA-Z]{3,10}$/gi;
+            /*^:must begin with
+             [a-zA-z] one char,min=3,max=10
+             $:must end with
+             
+             g:global(first char you find and others like him),Not just the first
+             i:ignore any upper or small letter case,
+             m:multi lines
+             */
+            var EmailRegExp = /^[a-zA-z0-9]+\@[a-zA-z0-9]+\.[a-zA-z0-9]*$/gi;
+            /*[a-zA-z0-9] one char
+             + 1 or more
+             \@ =@  ,, \.=.
+             
+             */
+            var PhoneRegExp = /^[0-9]{8}$/g;
+
+            var MobileRegExp = /^(01)[0-2]|5[0-9]{8}$/g;
+
+            var userEmail;
+            var c;
+            do {
+                userEmail = prompt("Please enter your Email:");
+                c = EmailRegExp.test(userEmail);
+            } while (!c)
+
+            document.write("<br/>emailRegEx:" + c);
+            var userName;
+            do {
+                userName = prompt("Please enter your Name:");
+                c = NameRegExp.test(userName);
+            } while (!c)
+            document.write("<br/>NameRegExp:" + c);
+
+            var userPhone;
+            do {
+                userPhone = prompt("Please enter your Phone:");
+                c = PhoneRegExp.test(userPhone);
+            } while (!c)
+            document.write("<br/>PhoneRegExp" + c);
+
+
+            var mobileNumber;
+            do {
+                mobileNumber = prompt("Please enter your Mobile Number");
+                c = MobileRegExp.test(mobileNumber);
+            } while (!c)
+
+            document.write("<br/>MobileRegExp" + c);
+
+            var stringColorRegExpression = /green|red|blue/gi;
+            var stringColor;
+
+            do {
+
+                stringColor = prompt("Please enter a color please(green or red orblue)");
+
+            } while (stringColor == null || stringColorRegExpression.test(stringColor) === false)
+
+            var myStatement = "<br/>Welcome Dear Guest: ";
+            document.write(myStatement.fontcolor(stringColor) + userName);
+
+            myStatement = "<br/>your telephone number is: ";
+            document.write(myStatement.fontcolor(stringColor) + userPhone);
+
+            myStatement = "<br/>your mobile number is: ";
+            document.write(myStatement.fontcolor(stringColor) + mobileNumber);
+
+            myStatement = "<br/>your email address is: ";
+            document.write(myStatement.fontcolor(stringColor) + userEmail);
+
+        </script>
+
+    </head>
+    <body>
+    </body>
+</html>

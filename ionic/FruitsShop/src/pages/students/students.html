@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Students</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let student of Students" (click)="itemTapped($event, student)">
+        <ion-icon color="danger" item-start="" name="person" role="img" class="icon icon-ios icon-ios-danger ion-ios-plane item-icon" aria-label="person"></ion-icon>
+        {{student.Name}}
+        <div class="item-note" item-end>
+          {{student.Phone}}
+        </div>
+      </button>
+    </ion-list>
+
+  </ion-content>
+  

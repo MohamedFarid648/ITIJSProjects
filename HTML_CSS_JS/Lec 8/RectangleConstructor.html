@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Rectangle Constructor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            function Rectangle(w, h) {
+
+                var width = typeof w == undefined ? 4 : w; //private
+                var height = typeof h == undefined ? 5 : h; //private
+
+                this.setWidth = function (w) {
+                    width = w;
+                }
+                this.getWidth = function () {
+                    return width;
+                }
+                this.setHeight = function (h) {
+                    height = h;
+                }
+                this.getHeight = function () {
+                    return height;
+                }
+
+                this.calculateArea = function () {
+
+                    return width * height;
+                }
+
+                this.calculatePerimeter = function () {
+
+                    var p = width + height;
+
+                    return p * 2;
+                }
+            }
+            Rectangle.prototype.toString = function () {
+
+                document.write("<br/><br/>width:" + this.getWidth());
+                document.write("<br/><br/>Height:" + this.getHeight());
+                document.write("<br/><br/>Area:" + this.calculateArea());
+                document.write("<br/><br/>Perimetr:" + this.calculatePerimeter());
+
+            }
+
+            var rect1 = new Rectangle(10, 20);
+
+            document.write("<br/><br/>Calculate Area:" + rect1.calculateArea());
+            document.write("<br/><br/>Calculate Perimeter:" + rect1.calculatePerimeter());
+            document.write("<br/><br/>To String:" );
+             rect1.toString();
+
+        </script>
+    </body>
+
+
+</html>
